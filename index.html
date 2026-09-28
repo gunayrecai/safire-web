@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stok Takip Programı | Barkodlu Cari ve Fatura Yönetimi | Safire ERP</title>
+<meta name="description" content="Küçük işletmeler ve e-ticaret satıcıları için Excel karmaşasına son veren, barkod destekli stok takip programı. Cari, fatura, irsaliye, kasa ve raporlar tek programda.">
+<meta name="keywords" content="stok takip programı, stok yönetimi, barkodlu stok, cari hesap programı, fatura programı, ön muhasebe, irsaliye, kasa takibi, stok programı ücretsiz">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Safire Bilgisayar">
+<link rel="canonical" href="https://safire-erp.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stok Takip Programı | Safire ERP">
+<meta property="og:description" content="Excel karmaşasına son veren, barkod destekli stok, cari ve fatura yönetim programı. Tek dosya kurulum, internetsiz çalışır.">
+<meta property="og:image" content="assets/ana-ekran.png">
+<meta property="og:locale" content="tr_TR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Stok Takip Programı | Safire ERP">
+<meta name="twitter:description" content="Barkod destekli stok, cari ve fatura yönetim programı.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1e293b;background:#fff;line-height:1.6}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f0}
+nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
+.logo{font-size:22px;font-weight:900;color:#1d4ed8}
+.logo span{color:#f59e0b}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{text-decoration:none;color:#475569;font-weight:600;font-size:14px}
+.btn{display:inline-block;padding:12px 28px;border-radius:8px;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-size:15px}
+.btn-blue{background:#2563eb;color:#fff}
+.btn-orange{background:#f59e0b;color:#fff}
+.btn-outline{background:#fff;color:#2563eb;border:2px solid #2563eb}
+.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;padding:70px 20px;text-align:center}
+.hero h1{font-size:40px;margin-bottom:14px}
+.hero p{font-size:18px;opacity:.9;max-width:640px;margin:0 auto 28px}
+.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hero img{max-width:900px;width:100%;margin-top:40px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+section{max-width:1100px;margin:0 auto;padding:60px 20px}
+h2{text-align:center;font-size:30px;margin-bottom:10px}
+.sub{text-align:center;color:#64748b;margin-bottom:36px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.card{border:1px solid #e2e8f0;border-radius:12px;padding:24px;background:#f8fafc}
+.card .icon{font-size:32px}
+.card h3{font-size:17px;margin:10px 0 6px}
+.card p{font-size:14px;color:#64748b}
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.feat{display:flex;gap:12px;align-items:flex-start;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px}
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.price{border:2px solid #e2e8f0;border-radius:14px;padding:30px 24px;text-align:center}
+.price.hot{border-color:#f59e0b;box-shadow:0 10px 40px rgba(245,158,11,.2)}
+.price h3{font-size:20px}
+.price .sure{color:#64748b;font-size:14px;margin:6px 0 18px}
+.price ul{list-style:none;text-align:left;margin-bottom:24px;font-size:14px}
+.price li{padding:6px 0;border-bottom:1px dashed #e2e8f0}
+.faq details{border:1px solid #e2e8f0;border-radius:10px;padding:16px 20px;margin-bottom:12px}
+.faq summary{font-weight:700;cursor:pointer}
+.contact{text-align:center;background:#f8fafc;border-radius:16px;padding:44px 20px}
+footer{text-align:center;padding:26px;color:#94a3b8;font-size:13px}
+@media(max-width:640px){.hero h1{font-size:28px}nav ul{display:none}}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<div class="logo">Safire <span>ERP</span></div>
+<ul>
+<li><a href="#moduller">Modüller</a></li>
+<li><a href="#ozellikler">Özellikler</a></li>
+<li><a href="#lisans">Lisans</a></li>
+<li><a href="#sss">S.S.S</a></li>
+<li><a href="#iletisim">İletişim</a></li>
+</ul>
+<a class="btn btn-blue" href="#iletisim">Demo İsteyin</a>
+</nav>
+</header>
+
+<div class="hero">
+<h1>Stok ve Cari Takibi Tek Programda</h1>
+<p>Yedek parça ve genel ticaret işletmeleri için fatura, irsaliye, kasa, çek-senet ve 20'den fazla rapor. Tek dosya kurulum, internet olmadan çalışır.</p>
+<div class="cta">
+<a class="btn btn-orange" href="#moduller">Modülleri İncele</a>
+<a class="btn btn-outline" style="background:#fff" href="#lisans">Lisans Seçenekleri</a>
+</div>
+<img src="assets/ana-ekran.png" alt="Safire ERP Ana Ekran">
+</div>
+
+<section id="moduller">
+<h2>Modüller</h2>
+<p class="sub">Günlük operasyonun tamamı tek programda</p>
+<div class="grid">
+<div class="card"><div class="icon">📦</div><h3>Stok Yönetimi</h3><p>Stok kartları, barkod desteği, kritik stok uyarıları, depo takibi. Excel'den toplu veri aktarımı.</p></div>
+<div class="card"><div class="icon">👥</div><h3>Cari Hesap</h3><p>Müşteri/tedarikçi kartları, bakiye ve risk limiti takibi. Excel'den toplu veri aktarımı.</p></div>
+<div class="card"><div class="icon">🧾</div><h3>Alış &amp; Satış Faturası</h3><p>Hızlı fatura girişi, KDV hesapları, iptal/iade akışı.</p></div>
+<div class="card"><div class="icon">🚚</div><h3>İrsaliye</h3><p>Alış/satış irsaliyeleri, tek tuşla faturaya dönüştürme.</p></div>
+<div class="card"><div class="icon">💰</div><h3>Kasa &amp; Banka</h3><p>Tahsilat, ödeme, transfer ve günlük kasa raporu.</p></div>
+<div class="card"><div class="icon">📑</div><h3>Çek / Senet Portföyü</h3><p>Vade takibi, tahsilat ve portföy özeti.</p></div>
+<div class="card"><div class="icon">📊</div><h3>Raporlar</h3><p>Cari mizan, stok hareket, kârlılık, ABC analizi ve daha fazlası. Excel ve PDF çıktı.</p></div>
+<div class="card"><div class="icon">📱</div><h3>Mobil Erişim</h3><p>Telefon ve el terminalinden barkod okutma, sayım ve irsaliye.</p></div>
+</div>
+</section>
+
+<section id="ozellikler">
+<h2>Neden Safire ERP?</h2>
+<p class="sub">Küçük işletmenin istediği gibi: sade, hızlı, bağımsız</p>
+<div class="feats">
+<div class="feat"><div>✅</div><div><b>Tek dosya kurulum</b><br>Dakikalar içinde çalışır, uzman gerektirmez.</div></div>
+<div class="feat"><div>✅</div><div><b>İnternetsiz çalışır</b><br>Veriler bilgisayarınızda durur, internet kesilse iş durmaz.</div></div>
+<div class="feat"><div>✅</div><div><b>Otomatik yedekleme</b><br>Verileriniz düzenli aralıklarla yedeklenir.</div></div>
+<div class="feat"><div>✅</div><div><b>Barkod okuyucu desteği</b><br>Standart USB okuyucuları tak-çalıştır kullanın.</div></div>
+<div class="feat"><div>✅</div><div><b>Kullanıcı rolleri</b><br>Kimin ne yapabileceğini yetkilendirin, işlem kayıtları tutulur.</div></div>
+<div class="feat"><div>✅</div><div><b>Türkçe destek</b><br>Telefonla ulaşabileceğiniz gerçek muhatap.</div></div>
+</div>
+</section>
+
+<section id="lisans">
+<h2>Lisans Seçenekleri</h2>
+<p class="sub">İhtiyacınıza göre süre seçin — tüm modüller dahildir</p>
+<div class="pricing">
+<div class="price">
+<h3>1 Yıllık</h3>
+<div class="sure">12 ay kullanım</div>
+<ul>
+<li>✓ Tüm modüller dahil</li>
+<li>✓ Tek bilgisayar kurulumu</li>
+<li>✓ Ücretsiz ara güncellemeler</li>
+</ul>
+<a class="btn btn-blue" href="mailto:recai_6789@hotmail.com?subject=1%20Y%C4%B1ll%C4%B1k%20Lisans%20Teklifi">Teklif Alın</a>
+</div>
+<div class="price hot">
+<h3>5 Yıllık ⭐</h3>
+<div class="sure">60 ay kullanım — en avantajlı</div>
+<ul>
+<li>✓ Tüm modüller dahil</li>
+<li>✓ Tek bilgisayar kurulumu</li>
+<li>✓ Ücretsiz ara güncellemeler</li>
+<li>✓ Öncelikli destek</li>
+</ul>
+<a class="btn btn-orange" href="mailto:recai_6789@hotmail.com?subject=5%20Y%C4%B1ll%C4%B1k%20Lisans%20Teklifi">Teklif Alın</a>
+</div>
+<div class="price">
+<h3>Ömür Boyu</h3>
+<div class="sure">Süresiz kullanım</div>
+<ul>
+<li>✓ Tüm modüller dahil</li>
+<li>✓ Tek bilgisayar kurulumu</li>
+<li>✓ Ömür boyu kullanım hakkı</li>
+</ul>
+<a class="btn btn-blue" href="mailto:recai_6789@hotmail.com?subject=%C3%96m%C3%BCr%20Boyu%20Lisans%20Teklifi">Teklif Alın</a>
+</div>
+</div>
+<p class="sub" style="margin-top:18px">Detaylı koşullar ve kurulum için iletişime geçin.</p>
+</section>
+
+<section id="sss" class="faq">
+<h2>Sık Sorulan Sorular</h2>
+<p class="sub"></p>
+<details><summary>İnternet olmadan çalışır mı?</summary><p>Evet. Program ve veriler bilgisayarınızda durur; internet kesilse bile satış, fatura ve stok işlemleri devam eder.</p></details>
+<details><summary>Kurulum nasıl yapılıyor?</summary><p>Tek kurulum dosyası gönderilir, birkaç dakikada kurulur. Verileriniz mevcutsa aktarım konusunda yardımcı olunur.</p></details>
+<details><summary>Barkod okuyucum çalışır mı?</summary><p>Evet. Piyasadaki standart USB barkod okuyucular sürücüsüz çalışır; irsaliye ve sayım ekranlarında otomatik tanınır.</p></details>
+<details><summary>Verilerim güvende mi?</summary><p>Verileriniz kendi bilgisayarınızda saklanır ve düzenli otomatik yedek alınır. Bilgileriniz üçüncü kişilerle paylaşılmaz.</p></details>
+</section>
+
+<section id="iletisim">
+<div class="contact">
+<h2>Demo ve Teklif İçin İletişim</h2>
+<p class="sub">Telefonla arayın, mesaj gönderin veya e-posta yazın</p>
+<p style="font-size:18px;font-weight:700;margin-bottom:8px">📞 <a href="tel:+905336514467" style="color:#1d4ed8;text-decoration:none">0-533-651-44-67</a></p>
+<p style="font-size:18px;font-weight:700;margin-bottom:20px">✉️ <a href="mailto:recai_6789@hotmail.com" style="color:#1d4ed8;text-decoration:none">recai_6789@hotmail.com</a></p>
+<a class="btn btn-blue" href="mailto:recai_6789@hotmail.com?subject=Safire%20ERP%20Demo%20Talebi">Demo Talebi Gönder</a>
+</div>
+</section>
+
+<footer>© 2026 Safire Bilgisayar — Safire ERP Stok Takip Sistemi</footer>
+</body>
+</html>
