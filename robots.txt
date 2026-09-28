@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://safire-erp.vercel.app/sitemap.xml
+Sitemap: https://gunayrecai.github.io/safire-web/sitemap.xml
