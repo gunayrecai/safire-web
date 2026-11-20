@@ -3,188 +3,72 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stok Takip Programı | Barkodlu Cari ve Fatura Yönetimi | Safire ERP</title>
-<meta name="description" content="Küçük işletmeler ve e-ticaret satıcıları için Excel karmaşasına son veren, barkod destekli stok takip programı. Cari, fatura, irsaliye, kasa ve raporlar tek programda.">
-<meta name="keywords" content="stok takip programı, stok yönetimi, barkodlu stok, cari hesap programı, fatura programı, ön muhasebe, irsaliye, kasa takibi, stok programı ücretsiz">
+<title>Safire ERP | Stok, Cari, Fatura ve Kasa Takip Sistemi</title>
+<meta name="description" content="Safire ERP ile stok, cari, alış-satış faturası, kasa, çek-senet ve rapor işlemlerinizi tek ekrandan yönetin.">
 <meta name="robots" content="index, follow">
-<meta name="author" content="Safire Bilgisayar">
 <link rel="canonical" href="https://gunayrecai.github.io/safire-web/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Stok Takip Programı | Safire ERP">
-<meta property="og:description" content="Excel karmaşasına son veren, barkod destekli stok, cari ve fatura yönetim programı. Tek dosya kurulum, internetsiz çalışır.">
-<meta property="og:image" content="https://gunayrecai.github.io/safire-web/assets/ana-ekran.png">
-<meta property="og:locale" content="tr_TR">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Stok Takip Programı | Safire ERP">
-<meta name="twitter:description" content="Barkod destekli stok, cari ve fatura yönetim programı.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Safire ERP","applicationCategory":"BusinessApplication","operatingSystem":"Windows","description":"Küçük işletmeler ve e-ticaret satıcıları için barkod destekli stok takip, cari hesap, fatura, irsaliye, kasa ve çek-senet yönetimi. Tek dosya kurulum, internetsiz çalışır.","url":"https://gunayrecai.github.io/safire-web/","inLanguage":"tr","offers":{"@type":"Offer","price":"0","priceCurrency":"TRY","description":"1 yıl, 5 yıl ve ömür boyu lisans seçenekleri"},"author":{"@type":"Organization","name":"Safire Bilgisayar"}}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"İnternet olmadan çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Program ve veriler bilgisayarınızda durur; internet kesilse bile satış, fatura ve stok işlemleri devam eder."}},
-{"@type":"Question","name":"Kurulum nasıl yapılıyor?","acceptedAnswer":{"@type":"Answer","text":"Tek kurulum dosyası gönderilir, birkaç dakikada kurulur. Verileriniz mevcutsa aktarım konusunda yardımcı olunur."}},
-{"@type":"Question","name":"Barkod okuyucum çalışır mı?","acceptedAnswer":{"@type":"Answer","text":"Evet. Piyasadaki standart USB barkod okuyucular sürücüsüz çalışır; irsaliye ve sayım ekranlarında otomatik tanınır."}},
-{"@type":"Question","name":"Verilerim güvende mi?","acceptedAnswer":{"@type":"Answer","text":"Verileriniz kendi bilgisayarınızda saklanır ve düzenli otomatik yedek alınır. Bilgileriniz üçüncü kişilerle paylaşılmaz."}}
-]}
-</script>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9QGV5HBGQM"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9QGV5HBGQM');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Arial,sans-serif;color:#1e293b;background:#fff;line-height:1.6}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);border-bottom:1px solid #e2e8f0}
-nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 20px}
-.logo{font-size:22px;font-weight:900;color:#1d4ed8}
-.logo span{color:#f59e0b}
-nav ul{display:flex;gap:22px;list-style:none}
-nav a{text-decoration:none;color:#475569;font-weight:600;font-size:14px}
-.btn{display:inline-block;padding:12px 28px;border-radius:8px;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-size:15px}
-.btn-blue{background:#2563eb;color:#fff}
-.btn-orange{background:#f59e0b;color:#fff}
-.btn-outline{background:#fff;color:#2563eb;border:2px solid #2563eb}
-.hero{background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;padding:70px 20px;text-align:center}
-.hero h1{font-size:40px;margin-bottom:14px}
-.hero p{font-size:18px;opacity:.9;max-width:640px;margin:0 auto 28px}
-.hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hero img{max-width:900px;width:100%;margin-top:40px;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
-section{max-width:1100px;margin:0 auto;padding:60px 20px}
-h2{text-align:center;font-size:30px;margin-bottom:10px}
-.sub{text-align:center;color:#64748b;margin-bottom:36px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{border:1px solid #e2e8f0;border-radius:12px;padding:24px;background:#f8fafc}
-.card .icon{font-size:32px}
-.card h3{font-size:17px;margin:10px 0 6px}
-.card p{font-size:14px;color:#64748b}
-.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
-.feat{display:flex;gap:12px;align-items:flex-start;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px}
-.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.price{border:2px solid #e2e8f0;border-radius:14px;padding:30px 24px;text-align:center}
-.price.hot{border-color:#f59e0b;box-shadow:0 10px 40px rgba(245,158,11,.2)}
-.price h3{font-size:20px}
-.price .sure{color:#64748b;font-size:14px;margin:6px 0 18px}
-.price ul{list-style:none;text-align:left;margin-bottom:24px;font-size:14px}
-.price li{padding:6px 0;border-bottom:1px dashed #e2e8f0}
-.faq details{border:1px solid #e2e8f0;border-radius:10px;padding:16px 20px;margin-bottom:12px}
-.faq summary{font-weight:700;cursor:pointer}
-.contact{text-align:center;background:#f8fafc;border-radius:16px;padding:44px 20px}
-footer{text-align:center;padding:26px;color:#94a3b8;font-size:13px}
-@media(max-width:640px){.hero h1{font-size:28px}nav ul{display:none}}
+:root{--navy:#28175f;--purple:#7823a8;--line:#dfe4ef}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f7f9fd;color:#1d2840;min-height:100vh}
+header{height:72px;background:linear-gradient(90deg,#24165f 0%,#7d35d6 100%);color:#fff;display:flex;align-items:center;padding:0 24px}
+.brand{display:flex;align-items:center;gap:14px;min-width:280px}.brand strong{font-size:22px;letter-spacing:2px}.brand small{font-size:12px;font-weight:600}
+.header-tools{margin-left:auto;display:flex;align-items:center;gap:12px}.search{width:170px;height:38px;border:1px solid rgba(255,255,255,.28);border-radius:20px;background:rgba(0,0,0,.14);color:#fff;padding:0 14px}.search::placeholder{color:#fff}
+.datebox{display:flex;align-items:baseline;gap:8px;text-align:right;padding:0 10px}.datebox b{display:block;font-size:12px}.datebox span{font-size:12px}
+.avatar{width:38px;height:38px;border-radius:50%;background:#fff;color:#5920a7;display:grid;place-items:center;font-weight:800}.header-btn{border:0;border-radius:8px;background:#fff;color:#43207d;height:38px;padding:0 16px;font-weight:700}
+main{padding:28px 12px 18px}.dashboard{max-width:1180px;margin:auto}.top-grid,.mid-grid,.bottom-grid{display:grid;gap:18px;margin-bottom:18px}.top-grid{grid-template-columns:repeat(3,1fr)}.mid-grid{grid-template-columns:repeat(4,1fr)}.bottom-grid{grid-template-columns:repeat(6,1fr)}
+.card{height:195px;border-radius:15px;color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;box-shadow:0 5px 12px rgba(25,35,70,.12);transition:.18s ease}.card:hover{transform:translateY(-4px);filter:brightness(1.04)}
+.top-grid .card{height:220px}.card .icon{font-size:38px;line-height:1;margin-bottom:12px;filter:drop-shadow(2px 3px 0 rgba(0,0,0,.2))}.card h3{font-size:17px;line-height:1.15}.card p{font-size:12px;margin-top:5px;opacity:.92}.tag{position:absolute;bottom:14px;font-size:10px;font-weight:800;padding:3px 9px;border-radius:12px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12)}
+.green{background:linear-gradient(135deg,#12a65b,#008b52)}.blue{background:linear-gradient(135deg,#168bd8,#0876c9)}.purple{background:linear-gradient(135deg,#8822af,#5a237e)}.red{background:linear-gradient(135deg,#ec664b,#d34837)}.teal{background:linear-gradient(135deg,#16868d,#176a78)}.orange{background:linear-gradient(135deg,#efa500,#d89500)}.navy{background:linear-gradient(135deg,#3d58aa,#25377e)}.pink{background:linear-gradient(135deg,#cf2a87,#a11c70)}.lime{background:linear-gradient(135deg,#18aa75,#14855a)}.gray{background:linear-gradient(135deg,#71839b,#526176)}.cyan{background:linear-gradient(135deg,#3191cf,#2475af)}.darkcyan{background:linear-gradient(135deg,#237b91,#1d5e78)}.brown{background:linear-gradient(135deg,#802f28,#64251f)}.magenta{background:linear-gradient(135deg,#a53aaa,#7c2885)}
+.wide-grid{grid-template-columns:1.2fr 1fr 1fr}.wide-grid .card{height:170px}.bottom-grid .card{height:155px}.wide-grid{display:grid;gap:18px;margin-bottom:18px}
+footer{border-top:1px solid #e1e5ee;padding:10px 16px;color:#7d8799;font-size:11px;display:flex;justify-content:space-between;background:#fff}
+@media(max-width:900px){.brand{min-width:220px}.search{display:none}.top-grid,.mid-grid{grid-template-columns:repeat(2,1fr)}.bottom-grid{grid-template-columns:repeat(3,1fr)}.wide-grid{grid-template-columns:1fr 1fr}.bottom-grid{gap:12px}.top-grid,.mid-grid,.wide-grid{gap:12px}}
+@media(max-width:560px){header{height:auto;min-height:68px;padding:12px}.brand{min-width:0}.brand small{display:none}.datebox,.header-btn{display:none}.dashboard{padding:0}.top-grid,.mid-grid,.bottom-grid,.wide-grid{grid-template-columns:repeat(2,1fr)}.top-grid .card,.card,.bottom-grid .card,.wide-grid .card{height:150px}.card h3{font-size:14px}.card p{font-size:10px}.card .icon{font-size:32px}main{padding:12px 8px}}
 </style>
 </head>
 <body>
 <header>
-<nav>
-<div class="logo">Safire <span>ERP</span></div>
-<ul>
-<li><a href="#moduller">Modüller</a></li>
-<li><a href="#ozellikler">Özellikler</a></li>
-<li><a href="#lisans">Lisans</a></li>
-<li><a href="#sss">S.S.S</a></li>
-<li><a href="#iletisim">İletişim</a></li>
-</ul>
-<a class="btn btn-blue" href="#iletisim">Demo İsteyin</a>
-</nav>
+  <div class="brand"><strong>SAFIRE ERP</strong><small>Stok Takip Sistemi</small></div>
+  <div class="header-tools">
+    <input class="search" placeholder="⌕ Akıllı Arama" aria-label="Arama">
+    <div class="datebox"><div><b>10:47:34</b><span>23 Ekim 2026</span></div></div>
+    <div class="avatar">S</div><button class="header-btn">ÇIKIŞ</button>
+  </div>
 </header>
-
-<div class="hero">
-<h1>Stok ve Cari Takibi Tek Programda</h1>
-<p>Yedek parça ve genel ticaret işletmeleri için fatura, irsaliye, kasa, çek-senet ve 20'den fazla rapor. Tek dosya kurulum, internet olmadan çalışır.</p>
-<div class="cta">
-<a class="btn btn-orange" href="#moduller">Modülleri İncele</a>
-<a class="btn btn-outline" style="background:#fff" href="#lisans">Lisans Seçenekleri</a>
-</div>
-<img src="assets/ana-ekran.png" alt="Safire ERP Ana Ekran">
-</div>
-
-<section id="moduller">
-<h2>Modüller</h2>
-<p class="sub">Günlük operasyonun tamamı tek programda</p>
-<div class="grid">
-<div class="card"><div class="icon">📦</div><h3>Stok Yönetimi</h3><p>Stok kartları, barkod desteği, kritik stok uyarıları, depo takibi. Excel'den toplu veri aktarımı.</p></div>
-<div class="card"><div class="icon">👥</div><h3>Cari Hesap</h3><p>Müşteri/tedarikçi kartları, bakiye ve risk limiti takibi. Excel'den toplu veri aktarımı.</p></div>
-<div class="card"><div class="icon">🧾</div><h3>Alış &amp; Satış Faturası</h3><p>Hızlı fatura girişi, KDV hesapları, iptal/iade akışı.</p></div>
-<div class="card"><div class="icon">🚚</div><h3>İrsaliye</h3><p>Alış/satış irsaliyeleri, tek tuşla faturaya dönüştürme.</p></div>
-<div class="card"><div class="icon">💰</div><h3>Kasa &amp; Banka</h3><p>Tahsilat, ödeme, transfer ve günlük kasa raporu.</p></div>
-<div class="card"><div class="icon">📑</div><h3>Çek / Senet Portföyü</h3><p>Vade takibi, tahsilat ve portföy özeti.</p></div>
-<div class="card"><div class="icon">📊</div><h3>Raporlar</h3><p>Cari mizan, stok hareket, kârlılık, ABC analizi ve daha fazlası. Excel ve PDF çıktı.</p></div>
-<div class="card"><div class="icon">📱</div><h3>Mobil Erişim</h3><p>Telefon ve el terminalinden barkod okutma, sayım ve irsaliye.</p></div>
-</div>
-</section>
-
-<section id="ozellikler">
-<h2>Neden Safire ERP?</h2>
-<p class="sub">Küçük işletmenin istediği gibi: sade, hızlı, bağımsız</p>
-<div class="feats">
-<div class="feat"><div>✅</div><div><b>Tek dosya kurulum</b><br>Dakikalar içinde çalışır, uzman gerektirmez.</div></div>
-<div class="feat"><div>✅</div><div><b>İnternetsiz çalışır</b><br>Veriler bilgisayarınızda durur, internet kesilse iş durmaz.</div></div>
-<div class="feat"><div>✅</div><div><b>Otomatik yedekleme</b><br>Verileriniz düzenli aralıklarla yedeklenir.</div></div>
-<div class="feat"><div>✅</div><div><b>Barkod okuyucu desteği</b><br>Standart USB okuyucuları tak-çalıştır kullanın.</div></div>
-<div class="feat"><div>✅</div><div><b>Kullanıcı rolleri</b><br>Kimin ne yapabileceğini yetkilendirin, işlem kayıtları tutulur.</div></div>
-<div class="feat"><div>✅</div><div><b>Türkçe destek</b><br>Telefonla ulaşabileceğiniz gerçek muhatap.</div></div>
-</div>
-</section>
-
-<section id="lisans">
-<h2>Lisans Seçenekleri</h2>
-<p class="sub">İhtiyacınıza göre süre seçin — tüm modüller dahildir</p>
-<div class="pricing">
-<div class="price">
-<h3>1 Yıllık</h3>
-<div class="sure">12 ay kullanım</div>
-<ul>
-<li>✓ Tüm modüller dahil</li>
-<li>✓ Tek bilgisayar kurulumu</li>
-<li>✓ Ücretsiz ara güncellemeler</li>
-</ul>
-<a class="btn btn-blue" href="mailto:recai_6789@hotmail.com?subject=1%20Y%C4%B1ll%C4%B1k%20Lisans%20Teklifi">Teklif Alın</a>
-</div>
-<div class="price hot">
-<h3>5 Yıllık ⭐</h3>
-<div class="sure">60 ay kullanım — en avantajlı</div>
-<ul>
-<li>✓ Tüm modüller dahil</li>
-<li>✓ Tek bilgisayar kurulumu</li>
-<li>✓ Ücretsiz ara güncellemeler</li>
-<li>✓ Öncelikli destek</li>
-</ul>
-<a class="btn btn-orange" href="mailto:recai_6789@hotmail.com?subject=5%20Y%C4%B1ll%C4%B1k%20Lisans%20Teklifi">Teklif Alın</a>
-</div>
-<div class="price">
-<h3>Ömür Boyu</h3>
-<div class="sure">Süresiz kullanım</div>
-<ul>
-<li>✓ Tüm modüller dahil</li>
-<li>✓ Tek bilgisayar kurulumu</li>
-<li>✓ Ömür boyu kullanım hakkı</li>
-</ul>
-<a class="btn btn-blue" href="mailto:recai_6789@hotmail.com?subject=%C3%96m%C3%BCr%20Boyu%20Lisans%20Teklifi">Teklif Alın</a>
-</div>
-</div>
-<p class="sub" style="margin-top:18px">Detaylı koşullar ve kurulum için iletişime geçin.</p>
-</section>
-
-<section id="sss" class="faq">
-<h2>Sık Sorulan Sorular</h2>
-<p class="sub"></p>
-<details><summary>İnternet olmadan çalışır mı?</summary><p>Evet. Program ve veriler bilgisayarınızda durur; internet kesilse bile satış, fatura ve stok işlemleri devam eder.</p></details>
-<details><summary>Kurulum nasıl yapılıyor?</summary><p>Tek kurulum dosyası gönderilir, birkaç dakikada kurulur. Verileriniz mevcutsa aktarım konusunda yardımcı olunur.</p></details>
-<details><summary>Barkod okuyucum çalışır mı?</summary><p>Evet. Piyasadaki standart USB barkod okuyucular sürücüsüz çalışır; irsaliye ve sayım ekranlarında otomatik tanınır.</p></details>
-<details><summary>Verilerim güvende mi?</summary><p>Verileriniz kendi bilgisayarınızda saklanır ve düzenli otomatik yedek alınır. Bilgileriniz üçüncü kişilerle paylaşılmaz.</p></details>
-</section>
-
-<section id="iletisim">
-<div class="contact">
-<h2>Demo ve Teklif İçin İletişim</h2>
-<p class="sub">Telefonla arayın, mesaj gönderin veya e-posta yazın</p>
-<p style="font-size:18px;font-weight:700;margin-bottom:8px">📞 <a href="tel:+905336514467" style="color:#1d4ed8;text-decoration:none">0-533-651-44-67</a></p>
-<p style="font-size:18px;font-weight:700;margin-bottom:20px">✉️ <a href="mailto:recai_6789@hotmail.com" style="color:#1d4ed8;text-decoration:none">recai_6789@hotmail.com</a></p>
-<a class="btn btn-blue" href="mailto:recai_6789@hotmail.com?subject=Safire%20ERP%20Demo%20Talebi">Demo Talebi Gönder</a>
-</div>
-</section>
-
-<footer>© 2026 Safire Bilgisayar — Safire ERP Stok Takip Sistemi</footer>
+<main><div class="dashboard">
+  <div class="top-grid">
+    <a class="card green" href="#"><span class="icon">👩‍💻</span><h3>Cari Kartı</h3><p>Alıcı / Tedarikçi</p><span class="tag">F2</span></a>
+    <a class="card blue" href="#"><span class="icon">📦</span><h3>Stok Kartı</h3><p>Ürün Yönetimi</p><span class="tag">F3</span></a>
+    <a class="card purple" href="#"><span class="icon">📄</span><h3>Satış Faturası</h3><p>Satış İşlemleri</p><span class="tag">F4</span></a>
+  </div>
+  <div class="mid-grid">
+    <a class="card red" href="#"><span class="icon">🛒</span><h3>Alış Faturası</h3><p>Satın Alma</p><span class="tag">F5</span></a>
+    <a class="card teal" href="#"><span class="icon">🚚</span><h3>Satış İrsaliyesi</h3><p>Mali Kabul</p><span class="tag">F6</span></a>
+    <a class="card orange" href="#"><span class="icon">🚛</span><h3>Alış İrsaliyesi</h3><p>Mal Kabul</p><span class="tag">F7</span></a>
+    <a class="card navy" href="#"><span class="icon">🚚</span><h3>Tedarik Takip</h3><p>Eksik Kalem &amp; Tedarikçi</p><span class="tag">F23</span></a>
+  </div>
+  <div class="bottom-grid">
+    <a class="card navy" href="#"><span class="icon">📊</span><h3>Raporlama</h3><span class="tag">F8</span></a>
+    <a class="card pink" href="#"><span class="icon">⚡</span><h3>Hızlı Satış</h3><span class="tag">F9</span></a>
+    <a class="card orange" href="#"><span class="icon">💰</span><h3>Kasa &amp; Banka</h3><span class="tag">F10</span></a>
+    <a class="card lime" href="#"><span class="icon">📃</span><h3>Çek/Senet</h3><span class="tag">F11</span></a>
+    <a class="card gray" href="#"><span class="icon">🏪</span><h3>Ambar Yönetimi</h3><span class="tag">F12</span></a>
+    <a class="card gray" href="#"><span class="icon">📁</span><h3>E-Belge Takip</h3><span class="tag">F13</span></a>
+  </div>
+  <div class="bottom-grid">
+    <a class="card cyan" href="#"><span class="icon">🧾</span><h3>Devri İşlemleri</h3><span class="tag">F14</span></a>
+    <a class="card darkcyan" href="#"><span class="icon">⚙️</span><h3>Sistem Ayarlar</h3><span class="tag">F15</span></a>
+    <a class="card brown" href="#"><span class="icon">👤</span><h3>Kullanıcı Ayarları</h3><span class="tag">F16</span></a>
+    <a class="card red" href="#"><span class="icon">📱</span><h3>Barkod Terminali</h3><span class="tag">F17</span></a>
+    <a class="card darkcyan" href="#"><span class="icon">📱</span><h3>El Terminali</h3><span class="tag">F18</span></a>
+    <a class="card magenta" href="#"><span class="icon">📱</span><h3>Mobil Kullanım</h3><span class="tag">F19</span></a>
+  </div>
+  <div class="wide-grid">
+    <a class="card purple" href="#"><span class="icon">🗓️</span><h3>Takvim / Ajanda</h3><span class="tag">F22</span></a>
+    <a class="card cyan" href="#"><span class="icon">❔</span><h3>Yardım / Kılavuz</h3><span class="tag">F21</span></a>
+  </div>
+</div></main>
+<footer><span>• SQ Lite - Aktif</span><span>• v1.0.121</span><span>Safire ERP v1.0.121 | © 2026 Safire Bilgisayar</span></footer>
 </body>
 </html>

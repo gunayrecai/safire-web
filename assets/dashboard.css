@@ -1,0 +1,3 @@
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#28175f;--purple:#7823a8}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f7f9fd;color:#1d2840;min-height:100vh}
