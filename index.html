@@ -1,74 +1,1410 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Safire ERP | Stok, Cari, Fatura ve Kasa Takip Sistemi</title>
-<meta name="description" content="Safire ERP ile stok, cari, alış-satış faturası, kasa, çek-senet ve rapor işlemlerinizi tek ekrandan yönetin.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://gunayrecai.github.io/safire-web/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--navy:#28175f;--purple:#7823a8;--line:#dfe4ef}
-body{font-family:'Segoe UI',Arial,sans-serif;background:#f7f9fd;color:#1d2840;min-height:100vh}
-header{height:72px;background:linear-gradient(90deg,#24165f 0%,#7d35d6 100%);color:#fff;display:flex;align-items:center;padding:0 24px}
-.brand{display:flex;align-items:center;gap:14px;min-width:280px}.brand strong{font-size:22px;letter-spacing:2px}.brand small{font-size:12px;font-weight:600}
-.header-tools{margin-left:auto;display:flex;align-items:center;gap:12px}.search{width:170px;height:38px;border:1px solid rgba(255,255,255,.28);border-radius:20px;background:rgba(0,0,0,.14);color:#fff;padding:0 14px}.search::placeholder{color:#fff}
-.datebox{display:flex;align-items:baseline;gap:8px;text-align:right;padding:0 10px}.datebox b{display:block;font-size:12px}.datebox span{font-size:12px}
-.avatar{width:38px;height:38px;border-radius:50%;background:#fff;color:#5920a7;display:grid;place-items:center;font-weight:800}.header-btn{border:0;border-radius:8px;background:#fff;color:#43207d;height:38px;padding:0 16px;font-weight:700}
-main{padding:28px 12px 18px}.dashboard{max-width:1180px;margin:auto}.top-grid,.mid-grid,.bottom-grid{display:grid;gap:18px;margin-bottom:18px}.top-grid{grid-template-columns:repeat(3,1fr)}.mid-grid{grid-template-columns:repeat(4,1fr)}.bottom-grid{grid-template-columns:repeat(6,1fr)}
-.card{height:195px;border-radius:15px;color:#fff;text-decoration:none;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;box-shadow:0 5px 12px rgba(25,35,70,.12);transition:.18s ease}.card:hover{transform:translateY(-4px);filter:brightness(1.04)}
-.top-grid .card{height:220px}.card .icon{font-size:38px;line-height:1;margin-bottom:12px;filter:drop-shadow(2px 3px 0 rgba(0,0,0,.2))}.card h3{font-size:17px;line-height:1.15}.card p{font-size:12px;margin-top:5px;opacity:.92}.tag{position:absolute;bottom:14px;font-size:10px;font-weight:800;padding:3px 9px;border-radius:12px;background:rgba(0,0,0,.32);border:1px solid rgba(255,255,255,.12)}
-.green{background:linear-gradient(135deg,#12a65b,#008b52)}.blue{background:linear-gradient(135deg,#168bd8,#0876c9)}.purple{background:linear-gradient(135deg,#8822af,#5a237e)}.red{background:linear-gradient(135deg,#ec664b,#d34837)}.teal{background:linear-gradient(135deg,#16868d,#176a78)}.orange{background:linear-gradient(135deg,#efa500,#d89500)}.navy{background:linear-gradient(135deg,#3d58aa,#25377e)}.pink{background:linear-gradient(135deg,#cf2a87,#a11c70)}.lime{background:linear-gradient(135deg,#18aa75,#14855a)}.gray{background:linear-gradient(135deg,#71839b,#526176)}.cyan{background:linear-gradient(135deg,#3191cf,#2475af)}.darkcyan{background:linear-gradient(135deg,#237b91,#1d5e78)}.brown{background:linear-gradient(135deg,#802f28,#64251f)}.magenta{background:linear-gradient(135deg,#a53aaa,#7c2885)}
-.wide-grid{grid-template-columns:1.2fr 1fr 1fr}.wide-grid .card{height:170px}.bottom-grid .card{height:155px}.wide-grid{display:grid;gap:18px;margin-bottom:18px}
-footer{border-top:1px solid #e1e5ee;padding:10px 16px;color:#7d8799;font-size:11px;display:flex;justify-content:space-between;background:#fff}
-@media(max-width:900px){.brand{min-width:220px}.search{display:none}.top-grid,.mid-grid{grid-template-columns:repeat(2,1fr)}.bottom-grid{grid-template-columns:repeat(3,1fr)}.wide-grid{grid-template-columns:1fr 1fr}.bottom-grid{gap:12px}.top-grid,.mid-grid,.wide-grid{gap:12px}}
-@media(max-width:560px){header{height:auto;min-height:68px;padding:12px}.brand{min-width:0}.brand small{display:none}.datebox,.header-btn{display:none}.dashboard{padding:0}.top-grid,.mid-grid,.bottom-grid,.wide-grid{grid-template-columns:repeat(2,1fr)}.top-grid .card,.card,.bottom-grid .card,.wide-grid .card{height:150px}.card h3{font-size:14px}.card p{font-size:10px}.card .icon{font-size:32px}main{padding:12px 8px}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safire ERP | Yedek Parça ve Genel Ticaret İçin Stok Takip & Ticari Yazılım</title>
+  <meta name="description" content="Safire ERP; yedek parça ve genel ticaret işletmeleri için geliştirilmiş, barkod destekli stok takip, cari hesap, fatura, irsaliye, kasa, mobil el terminali ve Tedarik Takip modüllerini tek merkezde birleştiren ticari yazılımdır." />
+  <meta name="keywords" content="Safire ERP, stok takip programı, yedek parça yazılımı, tedarik takip, cari hesap, ön muhasebe, barkod el terminali, irsaliye fatura programı, FIFO LIFO maliyet analizi, Safire Bilgisayar" />
+  <meta name="author" content="Safire Bilgisayar" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://gunayrecai.github.io/safire-web/" />
+
+  <!-- Open Graph / Sosyal Medya & Google Zengin Önizleme -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:site_name" content="Safire ERP" />
+  <meta property="og:title" content="Safire ERP | Yedek Parça ve Ticari İşletmeler İçin Tam Kontrol" />
+  <meta property="og:description" content="Excel karmaşasına ve dağınık sipariş listelerine son verin. Masaüstü, tarayıcı ve mobil cihazlardan aynı merkez veri üzerinde eşzamanlı çalışın. Bedelsiz kurulum ve eğitim fırsatı." />
+  <meta property="og:url" content="https://gunayrecai.github.io/safire-web/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image" content="https://gunayrecai.github.io/safire-web/assets/ana-ekran.png" />
+  <meta name="twitter:image" content="https://gunayrecai.github.io/safire-web/assets/ana-ekran.png" />
+  <meta name="twitter:title" content="Safire ERP - Merkezi Stok Takip ve Ticari Yönetim Yazılımı" />
+  <meta name="twitter:description" content="Stok, cari, fatura, irsaliye, mobil barkod ve Tedarik Takip süreçlerini tek merkezde yönetin." />
+
+  <!-- Google Yapısal Veri (JSON-LD SoftwareApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Safire ERP",
+    "alternateName": "Safire ERP Stok Takip Sistemi",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Windows, Web Tarayıcı, Android Mobil & El Terminali",
+    "softwareVersion": "1.0.351",
+    "description": "Yedek parça ve genel ticaret işletmeleri için geliştirilmiş; barkod destekli stok takip, cari, fatura, irsaliye, kasa, mobil barkod ve Tedarik Takip modüllerini tek çatı altında toplayan merkezi ticari yazılım.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY",
+      "description": "İşletmelere özel bedelsiz kurulum, veri aktarımı ve yerinde/uzaktan eğitim desteği."
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Safire Bilgisayar"
+    },
+    "featureList": [
+      "Sınırsız Stok Kartı ve Barkod Yönetimi",
+      "Özel Kod, Tedarikçi No ve Değişen Parça No Takibi",
+      "Tedarik Takip ve Eksik Kalem Analizi",
+      "Alış & Satış Fatura ve İrsaliye Yönetimi",
+      "Android Kamera & USB Barkod Okuyucu Desteği",
+      "FIFO, LIFO ve Ağırlıklı Ortalama Maliyet Raporları",
+      "e-Fatura ve e-İrsaliye Altyapısı",
+      "Çok Kullanıcılı Merkezi API ve Rol Bazlı Yetkilendirme"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            safire: {
+              50: '#faf5ff',
+              100: '#f3e8ff',
+              200: '#e9d5ff',
+              500: '#a855f7',
+              600: '#9333ea',
+              700: '#7e22ce',
+              800: '#6b21a8',
+              900: '#581c87',
+              950: '#3b0764',
+            }
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
-<header>
-  <div class="brand"><strong>SAFIRE ERP</strong><small>Stok Takip Sistemi</small></div>
-  <div class="header-tools">
-    <input class="search" placeholder="⌕ Akıllı Arama" aria-label="Arama">
-    <div class="datebox"><div><b>10:47:34</b><span>23 Ekim 2026</span></div></div>
-    <div class="avatar">S</div><button class="header-btn">ÇIKIŞ</button>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-safire-700 selection:text-white">
+
+  <!-- ÜST MENÜ (STICKY NAVBAR) -->
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Marka Logosu -->
+        <a href="#" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-safire-700 to-safire-900 flex items-center justify-center text-white shadow-md shadow-safire-800/25 group-hover:scale-105 transition-transform">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">SAFİRE <span class="text-safire-700">ERP</span></span>
+              <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-safire-100 text-safire-800">v1.0</span>
+            </div>
+            <p class="text-[11px] sm:text-xs text-slate-500 font-medium leading-none mt-0.5">Stok Takip & Ticari Yönetim Sistemi</p>
+          </div>
+        </a>
+
+        <!-- Masaüstü Menü Linkleri -->
+        <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+          <a href="#canli-onizleme" class="hover:text-safire-700 transition-colors">Canlı Ekran</a>
+          <a href="#tedarik-takip" class="inline-flex items-center gap-1.5 text-safire-800 hover:text-safire-600 transition-colors">
+            <span>Tedarik Takip</span>
+            <span class="px-1.5 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-800 rounded-md">Yeni F23</span>
+          </a>
+          <a href="#moduller" class="hover:text-safire-700 transition-colors">Tüm Modüller</a>
+          <a href="#mimari" class="hover:text-safire-700 transition-colors">Çalışma Yapısı</a>
+          <a href="#kurulum-talep" class="hover:text-safire-700 transition-colors">Kurulum & Eğitim</a>
+        </nav>
+
+        <!-- Sağ Aksiyon Butonları -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <button onclick="openWebPanelModal()" class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-safire-800 bg-safire-50 hover:bg-safire-100 border border-safire-200 transition-all cursor-pointer">
+            <svg class="w-4 h-4 text-safire-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+            </svg>
+            <span>Web Paneli</span>
+          </button>
+
+          <a href="#kurulum-talep" class="inline-flex items-center gap-1.5 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-safire-700 to-safire-800 hover:from-safire-800 hover:to-safire-900 shadow-md shadow-safire-800/20 transition-all">
+            <span class="hidden sm:inline">Ücretsiz Kurulum İste</span>
+            <span class="sm:hidden">Kurulum İste</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
+
+          <!-- Mobil Menü Açma Butonu -->
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Menüyü Aç" class="lg:hidden p-2 rounded-xl text-slate-600 hover:bg-slate-100">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobil Açılır Menü -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-5 space-y-2 shadow-lg">
+      <a href="#canli-onizleme" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-safire-50 hover:text-safire-700">Canlı Arayüz Önizlemesi</a>
+      <a href="#tedarik-takip" onclick="toggleMobileMenu()" class="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-semibold text-safire-800 bg-safire-50/70">
+        <span>Tedarik Takip Modülü</span>
+        <span class="px-2 py-0.5 text-xs font-bold bg-amber-100 text-amber-800 rounded-md">F23 Yeni</span>
+      </a>
+      <a href="#moduller" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-safire-50 hover:text-safire-700">Tüm Modüller (14+ Modül)</a>
+      <a href="#mimari" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-semibold text-slate-700 hover:bg-safire-50 hover:text-safire-700">Merkezi Mimari Nasıl Çalışır?</a>
+      <a href="#kurulum-talep" onclick="toggleMobileMenu()" class="block px-3 py-2.5 rounded-xl text-sm font-bold text-center text-white bg-safire-700">Bedelsiz Kurulum & Eğitim Talep Et</a>
+    </div>
+  </header>
+
+  <!-- HERO BÖLÜMÜ -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-[#23093d] via-[#340d5c] to-slate-900 text-white pt-12 pb-20 sm:pt-16 sm:pb-28">
+    <!-- Arka Plan Dekoratif Işıklar -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-purple-600/20 blur-3xl"></div>
+      <div class="absolute top-1/3 -right-24 w-96 h-96 rounded-full bg-indigo-500/20 blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Üst Rozet ve Başlık Alanı -->
+      <div class="text-center max-w-4xl mx-auto">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 backdrop-blur-sm text-xs sm:text-sm font-medium text-purple-200 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Yedek Parça ve Genel Ticaret İşletmeleri İçin Gerçek Zamanlı ERP</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.12] text-white">
+          Yedek Parça ve Ticari İşletmeler İçin <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-amber-200 to-emerald-300">Tek Merkezden Tam Kontrol.</span>
+        </h1>
+
+        <p class="mt-5 sm:mt-6 text-base sm:text-lg lg:text-xl text-purple-100/85 leading-relaxed max-w-3xl mx-auto font-normal">
+          Excel karmaşasına, defter-kâğıt takibine ve dağınık sipariş listelerine son verin. Ana bilgisayardan masaüstüne, tarayıcıdan el terminaline kadar tüm ekibiniz <strong class="text-white font-semibold">aynı canlı sunucu verisi</strong> üzerinde çalışsın.
+        </p>
+
+        <!-- Hero CTA Butonları -->
+        <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
+          <a href="#kurulum-talep" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-base font-bold text-slate-900 bg-gradient-to-r from-amber-300 to-amber-400 hover:from-amber-200 hover:to-amber-300 shadow-xl shadow-amber-500/20 transition-all">
+            <span>Ücretsiz Kurulum & Eğitim İste</span>
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <a href="#canli-onizleme" class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-2xl text-base font-semibold text-white bg-white/10 hover:bg-white/15 border border-white/20 backdrop-blur-sm transition-all">
+            <svg class="w-5 h-5 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            <span>Canlı Arayüzü İncele (F2–F23)</span>
+          </a>
+        </div>
+
+        <!-- Hızlı Güven Göstergeleri -->
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-3xl mx-auto text-left sm:text-center pt-6 border-t border-white/10">
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-white">1 Merkez</div>
+            <div class="text-xs text-purple-200/80">Ana Bilgisayar + API</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-emerald-300">10+ Kullanıcı</div>
+            <div class="text-xs text-purple-200/80">Masaüstü, Web & Mobil</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-amber-300">20+ Rapor</div>
+            <div class="text-xs text-purple-200/80">Gerçek FIFO / LIFO / ABG</div>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-extrabold text-sky-300">%100 Bedelsiz</div>
+            <div class="text-xs text-purple-200/80">Kurulum & İlk Eğitim</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- İNTERAKTİF SAFİRE ERP ANA EKRAN SİMÜLASYONU (2.0-SAFİRE ANA EKRANI.png Birebir Uyarlaması) -->
+      <div id="canli-onizleme" class="mt-12 sm:mt-16 scroll-mt-24">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3 px-1">
+          <div class="flex items-center gap-2 text-xs sm:text-sm text-purple-200">
+            <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            <span><strong>Etkileşimli Ekran Önizlemesi:</strong> Aşağıdaki herhangi bir modül kartına tıklayarak detaylarını inceleyin.</span>
+          </div>
+          <span class="text-xs text-purple-300/80 font-mono">Kısayollar: F2 – F23 | Ctrl+K Akıllı Arama</span>
+        </div>
+
+        <!-- Masaüstü Uygulama Pencere Çerçevesi -->
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-[#e2e8f0] text-slate-900">
+          <!-- Windows Üst Başlık Çubuğu -->
+          <div class="bg-white px-4 py-2 flex items-center justify-between border-b border-slate-200 text-xs text-slate-600">
+            <div class="flex items-center gap-4">
+              <div class="flex items-center gap-2 font-semibold text-slate-800">
+                <span class="w-3.5 h-3.5 rounded-sm bg-safire-700 inline-block"></span>
+                <span>Safire ERP - Ana Ekran</span>
+              </div>
+              <div class="hidden sm:flex items-center gap-3 text-slate-500">
+                <span>Dosya</span>
+                <span>Görünüm</span>
+                <span>Yardım</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-slate-300"></span>
+              <span class="w-3 h-3 rounded-full bg-slate-300"></span>
+              <span class="w-3 h-3 rounded-full bg-rose-400"></span>
+            </div>
+          </div>
+
+          <!-- Safire ERP Mor Üst Uygulama Barı -->
+          <div class="bg-gradient-to-r from-[#6b21a8] via-[#7e22ce] to-[#6b21a8] px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-3 text-white">
+            <div class="flex items-center gap-3">
+              <span class="text-lg sm:text-xl font-black tracking-wide">SAFİRE ERP</span>
+              <span class="text-xs sm:text-sm text-purple-200 font-medium border-l border-purple-400/40 pl-3">Stok Takip Sistemi</span>
+            </div>
+
+            <div class="flex items-center gap-2 sm:gap-3">
+              <!-- Akıllı Arama Simülasyonu -->
+              <button onclick="selectErpModule('akilli-arama')" class="flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/20 rounded-full px-3.5 py-1.5 text-xs font-medium transition cursor-pointer">
+                <svg class="w-3.5 h-3.5 text-purple-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <span>Akıllı Arama</span>
+                <kbd class="hidden sm:inline-block px-1.5 py-0.5 text-[10px] bg-black/25 rounded text-purple-100">Ctrl+K</kbd>
+              </button>
+
+              <!-- Tarih / Saat -->
+              <div class="hidden md:flex flex-col items-end bg-white/10 rounded-xl px-3 py-1 text-[11px] leading-tight">
+                <span class="font-bold">10:47:34</span>
+                <span class="text-purple-200">Merkez Sunucu Aktif</span>
+              </div>
+
+              <!-- Kullanıcı Rozeti -->
+              <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-900 font-bold text-xs flex items-center justify-center">S</div>
+                <div class="hidden sm:block text-left leading-tight">
+                  <div class="text-[10px] text-purple-200">admin</div>
+                  <div class="text-xs font-bold">Sistem Yöneticisi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ana Ekran Modül Izgarası + Seçili Modül Canlı Detay Paneli -->
+          <div class="p-4 sm:p-6 bg-[#dce3ec]">
+            <!-- 1. Sıra: 3 Büyük Ana Modül Kartı (Cari Kartı F2, Stok Kartı F3, Satış Faturası F4) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+              <button onclick="selectErpModule('cari')" id="tile-cari" class="erp-tile group bg-[#1e9651] hover:bg-[#198245] text-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer ring-2 ring-transparent">
+                <div class="w-12 h-12 rounded-xl bg-black/15 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform">
+                  <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div class="text-lg sm:text-xl font-extrabold">Cari Kartı</div>
+                <div class="text-xs text-emerald-100 mt-0.5">Alıcı / Tedarikçi</div>
+                <span class="mt-2.5 px-2.5 py-0.5 rounded-full bg-black/25 text-[11px] font-bold">F2</span>
+              </button>
+
+              <button onclick="selectErpModule('stok')" id="tile-stok" class="erp-tile group bg-[#2c8ec9] hover:bg-[#247bb0] text-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer ring-2 ring-transparent">
+                <div class="w-12 h-12 rounded-xl bg-black/15 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform">
+                  <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                  </svg>
+                </div>
+                <div class="text-lg sm:text-xl font-extrabold">Stok Kartı</div>
+                <div class="text-xs text-sky-100 mt-0.5">Ürün & Yedek Parça Yönetimi</div>
+                <span class="mt-2.5 px-2.5 py-0.5 rounded-full bg-black/25 text-[11px] font-bold">F3</span>
+              </button>
+
+              <button onclick="selectErpModule('satis-fatura')" id="tile-satis-fatura" class="erp-tile group bg-[#7e3f98] hover:bg-[#6d3584] text-white rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer ring-2 ring-transparent">
+                <div class="w-12 h-12 rounded-xl bg-black/15 flex items-center justify-center mb-2.5 group-hover:scale-110 transition-transform">
+                  <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <div class="text-lg sm:text-xl font-extrabold">Satış Faturası</div>
+                <div class="text-xs text-purple-100 mt-0.5">Satış İşlemleri</div>
+                <span class="mt-2.5 px-2.5 py-0.5 rounded-full bg-black/25 text-[11px] font-bold">F4</span>
+              </button>
+            </div>
+
+            <!-- 2. Sıra: 4 Orta Modül Kartı (Alış Faturası F5, Satış İrsaliyesi F6, Alış İrsaliyesi F7, Tedarik Takip F23) -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mt-3 sm:mt-4">
+              <button onclick="selectErpModule('alis-fatura')" id="tile-alis-fatura" class="erp-tile group bg-[#c8432e] hover:bg-[#b13825] text-white rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer">
+                <div class="w-10 h-10 rounded-xl bg-black/15 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                </div>
+                <div class="text-base sm:text-lg font-extrabold">Alış Faturası</div>
+                <div class="text-[11px] text-rose-100">Satın Alma</div>
+                <span class="mt-2 px-2.5 py-0.5 rounded-full bg-black/25 text-[11px] font-bold">F5</span>
+              </button>
+
+              <button onclick="selectErpModule('satis-irsaliye')" id="tile-satis-irsaliye" class="erp-tile group bg-[#16876d] hover:bg-[#12725c] text-white rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer">
+                <div class="w-10 h-10 rounded-xl bg-black/15 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                </div>
+                <div class="text-base sm:text-lg font-extrabold">Satış İrsaliyesi</div>
+                <div class="text-[11px] text-teal-100">Mal Teslimat</div>
+                <span class="mt-2 px-2.5 py-0.5 rounded-full bg-black/25 text-[11px] font-bold">F6</span>
+              </button>
+
+              <button onclick="selectErpModule('alis-irsaliye')" id="tile-alis-irsaliye" class="erp-tile group bg-[#dc8a0c] hover:bg-[#c27808] text-white rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer">
+                <div class="w-10 h-10 rounded-xl bg-black/15 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                  </svg>
+                </div>
+                <div class="text-base sm:text-lg font-extrabold">Alış İrsaliyesi</div>
+                <div class="text-[11px] text-amber-100">Mal Kabul</div>
+                <span class="mt-2 px-2.5 py-0.5 rounded-full bg-black/25 text-[11px] font-bold">F7</span>
+              </button>
+
+              <button onclick="selectErpModule('tedarik')" id="tile-tedarik" class="erp-tile group relative bg-[#213380] hover:bg-[#1a2969] text-white rounded-2xl p-4 sm:p-5 shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center text-center cursor-pointer ring-4 ring-amber-400">
+                <span class="absolute -top-2.5 right-3 px-2 py-0.5 bg-amber-400 text-slate-950 text-[10px] font-black rounded-full shadow">YENİ</span>
+                <div class="w-10 h-10 rounded-xl bg-black/20 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                  <svg class="w-6 h-6 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                </div>
+                <div class="text-base sm:text-lg font-extrabold">Tedarik Takip</div>
+                <div class="text-[11px] text-indigo-100">Eksik Kalem & Tedarikçi</div>
+                <span class="mt-2 px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 text-[11px] font-extrabold">F23</span>
+              </button>
+            </div>
+
+            <!-- 3. & 4. Sıra: Operasyonel & Saha Modülleri (F8 - F19) -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mt-3 sm:mt-4">
+              <button onclick="selectErpModule('raporlama')" id="tile-raporlama" class="erp-tile bg-[#28479c] hover:bg-[#203a82] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Raporlama</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F8</span>
+              </button>
+
+              <button onclick="selectErpModule('hizli-satis')" id="tile-hizli-satis" class="erp-tile bg-[#c81e56] hover:bg-[#ad1849] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Hızlı Satış</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F9</span>
+              </button>
+
+              <button onclick="selectErpModule('kasa-banka')" id="tile-kasa-banka" class="erp-tile bg-[#0d6f62] hover:bg-[#095a4f] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Kasa & Banka</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F10</span>
+              </button>
+
+              <button onclick="selectErpModule('cek-senet')" id="tile-cek-senet" class="erp-tile bg-[#689b38] hover:bg-[#57832e] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Çek-Senet</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F11</span>
+              </button>
+
+              <button onclick="selectErpModule('ambar')" id="tile-ambar" class="erp-tile bg-[#e56a08] hover:bg-[#c95c06] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Ambar Yönetimi</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F12</span>
+              </button>
+
+              <button onclick="selectErpModule('ebelge')" id="tile-ebelge" class="erp-tile bg-[#4f626e] hover:bg-[#41515b] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">E-Belge Takip</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F13</span>
+              </button>
+
+              <button onclick="selectErpModule('devir')" id="tile-devir" class="erp-tile bg-[#116596] hover:bg-[#0d527b] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Devir İşlemleri</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F14</span>
+              </button>
+
+              <button onclick="selectErpModule('sistem')" id="tile-sistem" class="erp-tile bg-[#11735f] hover:bg-[#0d5c4c] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Sistem Ayarları</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F15</span>
+              </button>
+
+              <button onclick="selectErpModule('kullanici')" id="tile-kullanici" class="erp-tile bg-[#354454] hover:bg-[#2a3643] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Kullanıcı Ayarları</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F16</span>
+              </button>
+
+              <button onclick="selectErpModule('mobil')" id="tile-mobil" class="erp-tile bg-[#2b8447] hover:bg-[#236d3a] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Barkod Terminali</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F17</span>
+              </button>
+
+              <button onclick="selectErpModule('mobil')" class="erp-tile bg-[#a63429] hover:bg-[#8c2b21] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">El Terminali</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F18</span>
+              </button>
+
+              <button onclick="selectErpModule('mobil')" class="erp-tile bg-[#85409c] hover:bg-[#703584] text-white rounded-xl p-3.5 shadow flex flex-col items-center justify-center text-center cursor-pointer transition">
+                <span class="text-xs sm:text-sm font-bold">Mobil Kullanıcı</span>
+                <span class="mt-1.5 px-2 py-0.5 rounded-full bg-black/25 text-[10px] font-bold">F19</span>
+              </button>
+            </div>
+
+            <!-- Canlı Modül Bilgi & Özellik Önizleme Kutusu -->
+            <div id="erpModulePreviewBox" class="mt-4 bg-white rounded-2xl p-5 sm:p-6 border border-slate-300/80 shadow-inner transition-all">
+              <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                <div>
+                  <div class="flex flex-wrap items-center gap-2.5">
+                    <span id="previewBadge" class="px-3 py-1 rounded-lg text-xs font-extrabold bg-[#213380] text-white">F23 • YENİ MODÜL</span>
+                    <h3 id="previewTitle" class="text-lg sm:text-xl font-extrabold text-slate-900">Tedarik Takip — Eksik Kalem & Tedarikçi Yönetimi</h3>
+                  </div>
+                  <p id="previewDesc" class="mt-2 text-sm sm:text-base text-slate-600 leading-relaxed max-w-4xl">
+                    Satış irsaliyelerinden gelen eksik kalemler otomatik olarak analiz edilir, tedarik havuzuna alınır, tedarikçiye atanır ve sipariş fişine dönüştürülür. Tarayıcıdaki Tedarik Takip paneli, merkez API’den gelen veriyi eksiksiz okuyarak masaüstüyle birebir eşleşir.
+                  </p>
+                </div>
+                <div class="shrink-0">
+                  <a href="#kurulum-talep" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold bg-safire-700 hover:bg-safire-800 text-white transition">
+                    <span>Bu Modülü Deneyin</span>
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div id="previewBullets" class="mt-4 pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg">
+                  <span class="text-emerald-600 font-bold">✓</span> Satış irsaliyesinden eksik kalem analizi
+                </div>
+                <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg">
+                  <span class="text-emerald-600 font-bold">✓</span> Tedarik havuzu ve kısmi teslim takibi
+                </div>
+                <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg">
+                  <span class="text-emerald-600 font-bold">✓</span> Sipariş fişinden alış irsaliyesi ve fatura
+                </div>
+                <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg">
+                  <span class="text-emerald-600 font-bold">✓</span> Tarayıcı & Masaüstü birebir veri senkronu
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alt Durum Çubuğu (Status Bar) -->
+          <div class="bg-white px-4 sm:px-6 py-2 border-t border-slate-200 flex flex-wrap items-center justify-between text-[11px] text-slate-500">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="font-medium text-slate-700">SQLite & Merkez API - Aktif</span>
+            </div>
+            <div class="font-mono">v1.0.351</div>
+            <div>Safire ERP v1.0.351 | © 2026 Safire Bilgisayar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAMİMİ DAVET & VEFA MESAJI (KURUCU NOTU) -->
+  <section class="py-12 sm:py-16 bg-white border-b border-slate-200/80">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative rounded-3xl bg-gradient-to-br from-safire-50 via-white to-amber-50/70 border border-safire-200/80 p-6 sm:p-10 shadow-sm">
+        <div class="flex flex-col md:flex-row items-start gap-6">
+          <div class="w-14 h-14 rounded-2xl bg-safire-700 text-white flex items-center justify-center shrink-0 shadow-lg shadow-safire-700/20">
+            <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <div class="space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-safire-100 text-safire-800 text-xs font-bold">
+              Sektöre Vefa & Bedelsiz Kullanım Daveti
+            </div>
+            <blockquote class="text-lg sm:text-xl font-semibold text-slate-900 leading-relaxed">
+              “Bunca senenin hatırına, benim de ekmek yediğim ve <span class="text-safire-700">‘işletmem’</span> dediğim yere bir katkı olsun diye bu programı hazırladım. Talep ederseniz <span class="underline decoration-amber-400 decoration-2 underline-offset-4">bedelsiz olarak kurup</span> faydalanmanızı isterim. <span class="text-safire-800">‘Gel, yap’</span> derseniz seve seve gelir; kurulumu, stok-cari aktarımını, eğitimi ve ilk fatura/irsaliye kullanımını birlikte hallederiz.”
+            </blockquote>
+            <p class="text-sm text-slate-600 pt-1">
+              Selamlar, kolay gelsin. — <strong>Safire Bilgisayar</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÖNE ÇIKAN YENİ MODÜL: TEDARİK TAKİP (F23) ÖZEL VİTRİNİ -->
+  <section id="tedarik-takip" class="py-16 sm:py-24 bg-slate-50 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div class="max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-900 text-xs font-bold mb-3">
+            <span>F23 • YENİ VE GÜNCEL MODÜL</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+            Tedarik Takip: Satış İrsaliyesinden Eksik Kalem Analizi ve Sipariş Yönetimi
+          </h2>
+          <p class="mt-3 text-base sm:text-lg text-slate-600 leading-relaxed">
+            Müşteriye kesilen satış irsaliyesinde stokta eksik kalan ürünler artık kâğıt notlarda kaybolmaz. Safire ERP eksik kalemleri otomatik tespit eder, tedarik havuzuna alır ve satın alma sürecini uçtan uca yönetir.
+          </p>
+        </div>
+
+        <div class="bg-white border border-indigo-200 rounded-2xl px-4 py-3 shadow-sm flex items-center gap-3 shrink-0">
+          <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+          <div class="text-xs sm:text-sm">
+            <div class="font-bold text-slate-900">Masaüstü & Tarayıcı Tam Eşleşme</div>
+            <div class="text-slate-500">Merkez API üzerinden canlı sunucu kaydı</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Adımlı Tedarik Süreci Akış Kartları -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition relative">
+          <div class="w-10 h-10 rounded-xl bg-teal-600 text-white font-black flex items-center justify-center mb-4">1</div>
+          <h3 class="text-lg font-extrabold text-slate-900">Eksik Kalem Analizi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Satış irsaliyelerinden gelen eksik kalemler otomatik olarak analiz edilir ve tek havuzda toplanır.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition relative">
+          <div class="w-10 h-10 rounded-xl bg-indigo-700 text-white font-black flex items-center justify-center mb-4">2</div>
+          <h3 class="text-lg font-extrabold text-slate-900">Tedarik Havuzu & Atama</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Havuzdaki ürünler ilgili tedarikçiye atanır, kısmi teslimatlar ve bekleyen miktarlar anlık izlenir.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition relative">
+          <div class="w-10 h-10 rounded-xl bg-amber-600 text-white font-black flex items-center justify-center mb-4">3</div>
+          <h3 class="text-lg font-extrabold text-slate-900">Sipariş Fişi & Mal Kabul</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Tedarikçi atamasından sipariş fişi oluşturulur; depoya gelen miktar ve kalan bakiye kontrol edilir.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition relative">
+          <div class="w-10 h-10 rounded-xl bg-safire-700 text-white font-black flex items-center justify-center mb-4">4</div>
+          <h3 class="text-lg font-extrabold text-slate-900">İrsaliye & Fatura Geçişi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Sipariş fişinden tek tıkla alış irsaliyesi ve faturaya geçilir; satın alma, depo ve muhasebe rolleri uyumlu çalışır.
+          </p>
+        </div>
+      </div>
+
+      <!-- Alt Bilgi Şeridi -->
+      <div class="mt-8 bg-indigo-950 text-white rounded-2xl p-6 sm:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="space-y-1">
+          <div class="text-sm sm:text-base font-bold text-amber-300">Pratik Ekran Geçişi ve Tarayıcı Operasyonu</div>
+          <p class="text-xs sm:text-sm text-indigo-100/90">
+            Satış irsaliyesinden gelen sipariş fişine ve sipariş kalemlerine tek tıkla ulaşın; <strong>“İrsaliyelere Git / Sipariş Listesine Dön”</strong> geçişleriyle tarayıcıdan da gerçek sunucu verisiyle çalışın.
+          </p>
+        </div>
+        <button onclick="openWebPanelModal()" class="shrink-0 px-5 py-3 rounded-xl bg-white text-indigo-950 hover:bg-indigo-50 text-xs sm:text-sm font-extrabold transition cursor-pointer">
+          Web Paneli Bağlantısını Gör
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- TÜM MODÜLLER BÖLÜMÜ (FİLTRELENEBİLİR KURUMSAL MODÜL KATALOĞU) -->
+  <section id="moduller" class="py-16 sm:py-24 bg-white border-t border-slate-200/80 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-xs font-extrabold uppercase tracking-wider text-safire-700 bg-safire-50 px-3 py-1.5 rounded-full">Uçtan Uca Ticari Altyapı</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          İşletmenizin Tüm Süreçleri Tek Programda
+        </h2>
+        <p class="mt-3 text-base text-slate-600">
+          Yedek parça ve ticari işletmelerin günlük operasyon hızına göre tasarlanmış, kısayol destekli bütünleşik modüller.
+        </p>
+      </div>
+
+      <!-- Kategori Filtre Butonları -->
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-2">
+        <button onclick="filterModules('all')" class="mod-filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-safire-700 text-white transition cursor-pointer" data-filter="all">Tümü (12 Modül)</button>
+        <button onclick="filterModules('stok-ticaret')" class="mod-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer" data-filter="stok-ticaret">Stok, Cari & Evrak</button>
+        <button onclick="filterModules('saha-mobil')" class="mod-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer" data-filter="saha-mobil">Mobil, Barkod & Depo</button>
+        <button onclick="filterModules('finans-rapor')" class="mod-filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition cursor-pointer" data-filter="finans-rapor">Finans, Maliyet & e-Belge</button>
+      </div>
+
+      <!-- Modül Kartları Izgarası -->
+      <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- 1. Stok Yönetimi -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-sky-400 hover:shadow-lg transition" data-category="stok-ticaret">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#2c8ec9] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-sky-100 text-sky-900 text-xs font-extrabold">F3 • Stok</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Stok Yönetimi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Sınırsız stok kartı, barkod desteği, <strong>özel kod / tedarikçi no / değişen parça no</strong> takibi, depo ve raf bilgisi, kritik stok uyarıları, sayım farkı düzeltme ve Excel’den toplu stok aktarımı.
+          </p>
+        </article>
+
+        <!-- 2. Cari Hesap -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-400 hover:shadow-lg transition" data-category="stok-ticaret">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#1e9651] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 text-xs font-extrabold">F2 • Cari</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Cari Hesap Yönetimi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Müşteri ve tedarikçi kartları, anlık borç-alacak bakiyesi, risk limiti kontrolü, vade takibi, detaylı cari ekstre, mizan raporları ve Excel’den toplu cari kart aktarımı.
+          </p>
+        </article>
+
+        <!-- 3. Alış & Satış Faturaları -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-purple-400 hover:shadow-lg transition" data-category="stok-ticaret">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#7e3f98] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-purple-100 text-purple-900 text-xs font-extrabold">F4 / F5 • Fatura</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Alış & Satış Faturaları</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Hızlı fatura girişi, otomatik KDV hesaplama, çoklu indirim satırları, güvenli iptal/iade akışı, belge onay kilidi ve irsaliyeden tek tuşla fatura oluşturma.
+          </p>
+        </article>
+
+        <!-- 4. İrsaliyeler -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-teal-400 hover:shadow-lg transition" data-category="stok-ticaret">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#16876d] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-900 text-xs font-extrabold">F6 / F7 • İrsaliye</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Alış & Satış İrsaliyeleri</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Mal teslimat ve mal kabul irsaliyeleri, yıl kilidi koruması, tek tuşla faturaya dönüştürme, iptal akışı, irsaliye geçmişi ve Tedarik Takip modülüyle doğrudan entegrasyon.
+          </p>
+        </article>
+
+        <!-- 5. Mobil + El Terminali + Barkod -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-emerald-400 hover:shadow-lg transition" data-category="saha-mobil">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#2b8447] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-900 text-xs font-extrabold">F17–F19 • Mobil</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Mobil + El Terminali + Barkod</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Android telefon kamerasıyla veya USB barkod okuyucuyla barkod okutarak stok ve raf yeri sorgulama, sahadan müşteri siparişi, irsaliye, fatura ve stok giriş-çıkış işlemleri.
+          </p>
+        </article>
+
+        <!-- 6. Ambar / Depo İşlemleri -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-orange-400 hover:shadow-lg transition" data-category="saha-mobil">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#e56a08] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-orange-100 text-orange-900 text-xs font-extrabold">F12 • Ambar</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Ambar & Depo İşlemleri</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Çoklu depo yönetimi, depolar arası güvenli stok transferi, depo bazlı hızlı sayım, yetersiz stok kontrolü ve yedek parçalar için raf bazlı adresleme takibi.
+          </p>
+        </article>
+
+        <!-- 7. Hızlı Satış Terminali -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-rose-400 hover:shadow-lg transition" data-category="saha-mobil">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#c81e56] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-900 text-xs font-extrabold">F9 • Perakende</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Hızlı Satış Terminali</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Tezgâh ve perakende satışlarda tek ekran üzerinden barkod okutarak saniyeler içinde hızlı fiş kesme, anında stok düşümü ve kasa/banka tahsilat entegrasyonu.
+          </p>
+        </article>
+
+        <!-- 8. Kasa & Banka -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-teal-400 hover:shadow-lg transition" data-category="finans-rapor">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#0d6f62] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-teal-100 text-teal-900 text-xs font-extrabold">F10 • Finans</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Kasa & Banka Yönetimi</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Nakit, POS ve banka havale/EFT tahsilatları, tedarikçi ödemeleri, kasalar arası virman/transfer, günlük kasa defteri raporu ve kasa bazlı anlık bakiyeler.
+          </p>
+        </article>
+
+        <!-- 9. Çek/Senet Portföyü -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-lime-500 hover:shadow-lg transition" data-category="finans-rapor">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#689b38] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-lime-100 text-lime-900 text-xs font-extrabold">F11 • Portföy</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Çek / Senet Portföyü</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Portföyde, ciroda ve tahsilde çek/senet takibi, vade izleme takvimi, tahsilat onaylandığında otomatik kasa/banka işleyişi ve hatalı işlemlere karşı çift tahsil koruması.
+          </p>
+        </article>
+
+        <!-- 10. 20'den Fazla Rapor & Maliyet Analizi -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-blue-400 hover:shadow-lg transition" data-category="finans-rapor">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#28479c] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-blue-100 text-blue-900 text-xs font-extrabold">F8 • 20+ Rapor</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Gelişmiş Raporlar & Maliyet</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Gerçek <strong>FIFO, LIFO ve Ağırlıklı Ortalama (ABG)</strong> maliyet katmanları, eksik fiyatlı hareket uyarıları, ABC analizi, otomatik sipariş önerisi, kârlılık ve cari mutabakat raporları.
+          </p>
+        </article>
+
+        <!-- 11. e-Belge Altyapısı -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-slate-400 hover:shadow-lg transition" data-category="finans-rapor">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#4f626e] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-slate-200 text-slate-900 text-xs font-extrabold">F13 • GİB</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">e-Belge Altyapısı</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            e-Fatura ve e-İrsaliye gönderim kuyruğu, GİB durum sorgulama, gelen/giden belge takibi ve entegratör ayar yönetimi ile dijital dönüşüme tam uyum.
+          </p>
+        </article>
+
+        <!-- 12. Kullanıcı Rolleri, Denetim Kaydı & Ajanda -->
+        <article class="module-card bg-slate-50 rounded-2xl p-6 border border-slate-200/90 hover:border-safire-400 hover:shadow-lg transition" data-category="stok-ticaret">
+          <div class="flex items-center justify-between mb-4">
+            <div class="w-11 h-11 rounded-xl bg-[#354454] text-white flex items-center justify-center font-bold">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-safire-100 text-safire-900 text-xs font-extrabold">F16 / F22 • Yetki</span>
+          </div>
+          <h3 class="text-lg font-extrabold text-slate-900">Kullanıcı Rolleri & Ajanda</h3>
+          <p class="mt-2 text-sm text-slate-600 leading-relaxed">
+            Satış, depo, muhasebe, satın alma ve yönetici rolleriyle yetki sınırlandırma, denetim kaydı (log) izleme, takvim/ajanda, vade hatırlatmaları ve SMS bilgilendirme.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MERKEZİ MİMARİ NASIL ÇALIŞIR? -->
+  <section id="mimari" class="py-16 sm:py-24 bg-slate-900 text-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-xs font-bold">
+          Hibrit & Gerçek Zamanlı Mimari
+        </span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-black tracking-tight">
+          1 Ana Bilgisayar, Tüm Ekibiniz İçin Tek Canlı Veri Merkezi
+        </h2>
+        <p class="mt-3 text-base text-slate-300 leading-relaxed">
+          Karmaşık bulut kiralarına veya yavaş bağlantılara mahkûm olmayın. İşletmenizdeki 1 ana bilgisayara kurulan Safire ERP merkez yapısı sayesinde ofis, tarayıcı ve saha ekibiniz aynı anda, aynı veri üzerinde çalışır.
+        </p>
+      </div>
+
+      <!-- Mimari Akış Diyagramı -->
+      <div class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+        <!-- Sol: Ofis Masaüstü / Laptop Kullanıcıları -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-sky-500/20 text-sky-300 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-lg">4–5 Masaüstü / Laptop</h3>
+              <p class="text-xs text-slate-400">Satış, Muhasebe & Satın Alma</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> F2–F23 klavye kısayollarıyla yüksek hız</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Fatura, irsaliye, cari ve finans yönetimi</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Rol bazlı ekran ve işlem yetkilendirme</li>
+          </ul>
+        </div>
+
+        <!-- Orta: Merkez Ana Bilgisayar & API -->
+        <div class="relative bg-gradient-to-b from-safire-800 to-safire-950 border-2 border-amber-400/80 rounded-3xl p-7 shadow-2xl shadow-safire-900/50 text-center">
+          <span class="inline-block px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-xs font-black mb-3">
+            MERKEZ SUNUCU & API
+          </span>
+          <div class="w-16 h-16 mx-auto rounded-2xl bg-white/10 flex items-center justify-center mb-3">
+            <svg class="w-9 h-9 text-amber-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" /></svg>
+          </div>
+          <h3 class="text-xl font-black text-white">1 Ana Bilgisayar Kurulumu</h3>
+          <p class="mt-2 text-sm text-purple-100/90 leading-relaxed">
+            Tüm stok, cari, fatura, irsaliye ve tedarik kayıtları tek merkez veritabanında toplanır. Tarayıcı ve mobil ekranlar <strong>demo veri değil, gerçek sunucu kayıtlarıyla</strong> eşzamanlı çalışır.
+          </p>
+          <div class="mt-4 pt-4 border-t border-white/15 flex items-center justify-center gap-4 text-xs font-semibold text-emerald-300">
+            <span>• Canlı Senkronizasyon</span>
+            <span>• Denetim Kaydı</span>
+          </div>
+        </div>
+
+        <!-- Sağ: Mobil, El Terminali & Web Tarayıcı Kullanıcıları -->
+        <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-extrabold text-lg">4–5 Mobil & Web Tarayıcı</h3>
+              <p class="text-xs text-slate-400">Depo, Sevkiyat & Saha Ekibi</p>
+            </div>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-300">
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Android kamera & USB barkod okutma</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Tarayıcıdan Tedarik Takip & sipariş yönetimi</li>
+            <li class="flex items-center gap-2"><span class="text-emerald-400">✓</span> Sahadan sipariş fişi ve satış irsaliyesi kesme</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜCRETSİZ KURULUM & İLETİŞİM TALEP FORMU -->
+  <section id="kurulum-talep" class="py-16 sm:py-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+
+        <!-- Sol Bilgi Paneli -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-safire-800 via-safire-900 to-slate-900 text-white p-8 sm:p-10 flex flex-col justify-between">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full bg-amber-400 text-slate-950 text-xs font-black mb-4">
+              BEDELSİZ KURULUM & EĞİTİM
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-black leading-tight">
+              İşletmenize Gelelim, Birlikte Devreye Alalım.
+            </h2>
+            <p class="mt-4 text-sm sm:text-base text-purple-100/90 leading-relaxed">
+              İsterseniz gelir, programı işletmenize bedelsiz kurar; mevcut Excel stok ve cari listelerinizin aktarımından ilk fatura ve ilk irsaliyeye kadar birlikte devreye alırız.
+            </p>
+
+            <div class="mt-8 space-y-4 text-sm">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+                <div>
+                  <div class="font-bold">Ana Bilgisayar & Ağ Kurulumu</div>
+                  <div class="text-purple-200/80 text-xs">Masaüstü, tarayıcı ve mobil kullanıcı bağlantıları</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+                <div>
+                  <div class="font-bold">Excel’den Toplu Veri Aktarımı</div>
+                  <div class="text-purple-200/80 text-xs">Stok kartları, özel/parça kodları ve cari bakiyeler</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 rounded-full bg-emerald-400/20 text-emerald-300 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+                <div>
+                  <div class="font-bold">Uygulamalı Personel Eğitimi</div>
+                  <div class="text-purple-200/80 text-xs">İlk fatura, irsaliye ve Tedarik Takip uygulaması</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-6 border-t border-white/15 text-xs text-purple-200/80">
+            Safire Bilgisayar • Yedek Parça ve Genel Ticaret Yazılımları
+          </div>
+        </div>
+
+        <!-- Sağ Form Alanı -->
+        <div class="lg:col-span-7 p-8 sm:p-10">
+          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900">Kurulum / Tanıtım Talebi Oluşturun</h3>
+          <p class="mt-1 text-sm text-slate-500">Bilgilerinizi bırakın, en kısa sürede dönüş yaparak kurulum planını oluşturalım.</p>
+
+          <form id="installForm" onsubmit="handleInstallSubmit(event)" class="mt-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="companyName" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">İşletme / Firma Adı *</label>
+                <input type="text" id="companyName" required placeholder="Örn: Özkan Oto Yedek Parça" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-safire-600 focus:border-transparent" />
+              </div>
+              <div>
+                <label for="contactName" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Adınız Soyadınız *</label>
+                <input type="text" id="contactName" required placeholder="Adınız ve Soyadınız" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-safire-600 focus:border-transparent" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="phoneNumber" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Telefon Numaranız *</label>
+                <input type="tel" id="phoneNumber" required placeholder="05XX XXX XX XX" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-safire-600 focus:border-transparent" />
+              </div>
+              <div>
+                <label for="cityDistrict" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Şehir / İlçe *</label>
+                <input type="text" id="cityDistrict" required placeholder="Örn: Hatay / Antakya" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-safire-600 focus:border-transparent" />
+              </div>
+            </div>
+
+            <div>
+              <label for="requestType" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Talep Türü</label>
+              <select id="requestType" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-safire-600 focus:border-transparent">
+                <option value="Yerinde Kurulum & Eğitim (“Gel, yap”)">Yerinde Kurulum & Eğitim (“Gel, yap”)</option>
+                <option value="Uzaktan Bağlantı ile Bedelsiz Kurulum">Uzaktan Bağlantı ile Bedelsiz Kurulum</option>
+                <option value="Canlı Demo & Tedarik Takip İncelemesi">Canlı Demo & Tedarik Takip İncelemesi</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="notes" class="block text-xs font-bold text-slate-700 uppercase tracking-wide mb-1.5">Notunuz (Kullanıcı sayısı, mevcut Excel listesi vb.)</label>
+              <textarea id="notes" rows="3" placeholder="Örn: 3 masaüstü, 2 mobil kullanıcı için stok ve tedarik takibi kullanmak istiyoruz." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-safire-600 focus:border-transparent"></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-safire-700 to-safire-800 hover:from-safire-800 hover:to-safire-900 text-white font-bold text-sm sm:text-base shadow-lg shadow-safire-800/20 transition cursor-pointer">
+              Bedelsiz Kurulum Talebini Gönder
+            </button>
+          </form>
+
+          <!-- Form Gönderim Onay Kutusu (alert() yerine özel mesaj kutusu) -->
+          <div id="formSuccessBox" class="hidden mt-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 text-emerald-950 space-y-3">
+            <div class="flex items-center gap-2.5 font-extrabold text-base text-emerald-800">
+              <svg class="w-6 h-6 text-emerald-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <span>Talebiniz Hazırlandı!</span>
+            </div>
+            <p id="formSummaryText" class="text-sm text-emerald-900 leading-relaxed"></p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button type="button" onclick="copyRequestSummary()" class="px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition cursor-pointer">
+                Talep Özetini Kopyala
+              </button>
+              <span id="copyFeedback" class="text-xs font-semibold text-emerald-700 self-center hidden">✓ Panoya kopyalandı!</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KURUMSAL FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-10 border-b border-slate-800/80">
+        <!-- Marka Özeti -->
+        <div class="lg:col-span-2 space-y-3">
+          <div class="flex items-center gap-2.5 text-white">
+            <div class="w-8 h-8 rounded-lg bg-safire-700 flex items-center justify-center font-black text-sm">S</div>
+            <span class="text-lg font-extrabold tracking-tight">SAFİRE <span class="text-purple-400">ERP</span></span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+            Yedek parça ve genel ticaret işletmeleri için geliştirilmiş; stok, cari, fatura, irsaliye, kasa, çek-senet, mobil barkod ve Tedarik Takip süreçlerini tek merkezde birleştiren ticari yazılım.
+          </p>
+        </div>
+
+        <!-- Hızlı Bağlantılar -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Çözümler & Modüller</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#tedarik-takip" class="hover:text-white transition">Tedarik Takip (F23)</a></li>
+            <li><a href="#moduller" class="hover:text-white transition">Stok & Yedek Parça Yönetimi</a></li>
+            <li><a href="#moduller" class="hover:text-white transition">Mobil & El Terminali Barkod</a></li>
+            <li><a href="#moduller" class="hover:text-white transition">FIFO / LIFO Maliyet Raporları</a></li>
+          </ul>
+        </div>
+
+        <!-- Erişim & Kurulum -->
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Erişim & Kurulum</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#kurulum-talep" class="hover:text-white transition">Ücretsiz Kurulum & Eğitim</a></li>
+            <li><a href="#mimari" class="hover:text-white transition">Merkezi Sunucu Mimarisi</a></li>
+            <li>
+              <button onclick="openWebPanelModal()" class="text-purple-400 hover:text-purple-300 font-semibold transition cursor-pointer">
+                Web Paneli & Sunucu Girişi →
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div>© 2026 Safire Bilgisayar. Tüm hakları saklıdır. (Safire ERP v1.0.351)</div>
+        <div class="text-slate-500">Yedek Parça • Stok Takip • Cari • İrsaliye • Fatura • Tedarik Takip</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WEB PANELİ / SUNUCU GİRİŞ MODALI -->
+  <div id="webPanelModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-7 shadow-2xl border border-slate-200 relative animate-fadeIn">
+      <button onclick="closeWebPanelModal()" aria-label="Kapat" class="absolute top-4 right-4 p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 cursor-pointer">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div class="w-12 h-12 rounded-2xl bg-safire-100 text-safire-800 flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
+      </div>
+
+      <h3 class="text-xl font-black text-slate-900">Safire ERP Web Paneli Girişi</h3>
+      <p class="mt-1.5 text-sm text-slate-600 leading-relaxed">
+        Safire ERP tarayıcı paneli, işletmenizdeki merkez sunucu API’sine bağlanarak gerçek stok, irsaliye ve Tedarik Takip verileriyle çalışır.
+      </p>
+
+      <div class="mt-5 space-y-3">
+        <div>
+          <label for="serverAddressInput" class="block text-xs font-bold text-slate-700 uppercase mb-1">Merkez Sunucu / Panel Adresi</label>
+          <input type="text" id="serverAddressInput" placeholder="Örn: http://192.168.1.100:8080 veya panel URL" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:outline-none focus:ring-2 focus:ring-safire-600" />
+        </div>
+        <button onclick="connectWebPanel()" class="w-full py-3 rounded-xl bg-safire-700 hover:bg-safire-800 text-white text-sm font-bold transition cursor-pointer">
+          Web Paneline Bağlan
+        </button>
+        <div id="webPanelStatusMsg" class="hidden p-3 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900"></div>
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <span>Henüz kurulumunuz yok mu?</span>
+        <a href="#kurulum-talep" onclick="closeWebPanelModal()" class="font-bold text-safire-700 hover:underline">Ücretsiz Kurulum İste →</a>
+      </div>
+    </div>
   </div>
-</header>
-<main><div class="dashboard">
-  <div class="top-grid">
-    <a class="card green" href="#"><span class="icon">👩‍💻</span><h3>Cari Kartı</h3><p>Alıcı / Tedarikçi</p><span class="tag">F2</span></a>
-    <a class="card blue" href="#"><span class="icon">📦</span><h3>Stok Kartı</h3><p>Ürün Yönetimi</p><span class="tag">F3</span></a>
-    <a class="card purple" href="#"><span class="icon">📄</span><h3>Satış Faturası</h3><p>Satış İşlemleri</p><span class="tag">F4</span></a>
-  </div>
-  <div class="mid-grid">
-    <a class="card red" href="#"><span class="icon">🛒</span><h3>Alış Faturası</h3><p>Satın Alma</p><span class="tag">F5</span></a>
-    <a class="card teal" href="#"><span class="icon">🚚</span><h3>Satış İrsaliyesi</h3><p>Mali Kabul</p><span class="tag">F6</span></a>
-    <a class="card orange" href="#"><span class="icon">🚛</span><h3>Alış İrsaliyesi</h3><p>Mal Kabul</p><span class="tag">F7</span></a>
-    <a class="card navy" href="#"><span class="icon">🚚</span><h3>Tedarik Takip</h3><p>Eksik Kalem &amp; Tedarikçi</p><span class="tag">F23</span></a>
-  </div>
-  <div class="bottom-grid">
-    <a class="card navy" href="#"><span class="icon">📊</span><h3>Raporlama</h3><span class="tag">F8</span></a>
-    <a class="card pink" href="#"><span class="icon">⚡</span><h3>Hızlı Satış</h3><span class="tag">F9</span></a>
-    <a class="card orange" href="#"><span class="icon">💰</span><h3>Kasa &amp; Banka</h3><span class="tag">F10</span></a>
-    <a class="card lime" href="#"><span class="icon">📃</span><h3>Çek/Senet</h3><span class="tag">F11</span></a>
-    <a class="card gray" href="#"><span class="icon">🏪</span><h3>Ambar Yönetimi</h3><span class="tag">F12</span></a>
-    <a class="card gray" href="#"><span class="icon">📁</span><h3>E-Belge Takip</h3><span class="tag">F13</span></a>
-  </div>
-  <div class="bottom-grid">
-    <a class="card cyan" href="#"><span class="icon">🧾</span><h3>Devri İşlemleri</h3><span class="tag">F14</span></a>
-    <a class="card darkcyan" href="#"><span class="icon">⚙️</span><h3>Sistem Ayarlar</h3><span class="tag">F15</span></a>
-    <a class="card brown" href="#"><span class="icon">👤</span><h3>Kullanıcı Ayarları</h3><span class="tag">F16</span></a>
-    <a class="card red" href="#"><span class="icon">📱</span><h3>Barkod Terminali</h3><span class="tag">F17</span></a>
-    <a class="card darkcyan" href="#"><span class="icon">📱</span><h3>El Terminali</h3><span class="tag">F18</span></a>
-    <a class="card magenta" href="#"><span class="icon">📱</span><h3>Mobil Kullanım</h3><span class="tag">F19</span></a>
-  </div>
-  <div class="wide-grid">
-    <a class="card purple" href="#"><span class="icon">🗓️</span><h3>Takvim / Ajanda</h3><span class="tag">F22</span></a>
-    <a class="card cyan" href="#"><span class="icon">❔</span><h3>Yardım / Kılavuz</h3><span class="tag">F21</span></a>
-  </div>
-</div></main>
-<footer><span>• SQ Lite - Aktif</span><span>• v1.0.121</span><span>Safire ERP v1.0.121 | © 2026 Safire Bilgisayar</span></footer>
+
+  <!-- INTERAKTİF JAVASCRIPT MANTIĞI -->
+  <script>
+    // Canlı Ekran Önizlemesi Modül Verileri
+    const erpModuleData = {
+      'tedarik': {
+        badge: 'F23 • YENİ VE GÜNCEL MODÜL',
+        badgeBg: '#213380',
+        title: 'Tedarik Takip — Eksik Kalem & Tedarikçi Yönetimi',
+        desc: 'Satış irsaliyelerinden gelen eksik kalemler otomatik olarak analiz edilir, tedarik havuzuna alınır, tedarikçiye atanır ve sipariş fişine dönüştürülür. Tarayıcıdaki Tedarik Takip paneli, merkez API’den gelen veriyi eksiksiz okuyarak masaüstüyle birebir eşleşir.',
+        bullets: [
+          'Satış irsaliyesinden eksik kalem analizi',
+          'Tedarik havuzu ve kısmi teslim takibi',
+          'Sipariş fişinden alış irsaliyesi ve fatura',
+          'Tarayıcı & Masaüstü birebir veri senkronu'
+        ]
+      },
+      'cari': {
+        badge: 'F2 • CARİ HESAP',
+        badgeBg: '#1e9651',
+        title: 'Cari Kartı — Alıcı & Tedarikçi Yönetimi',
+        desc: 'Müşteri ve tedarikçi kartları, anlık borç-alacak bakiyesi, risk limiti uyarıları, vade takibi, detaylı cari hareket ekstresi, mizan ve Excel’den toplu cari aktarımı.',
+        bullets: [
+          'Borç-alacak ve risk limiti takibi',
+          'Cari hareket ekstresi ve mizan',
+          'Vade takibi ve mutabakat raporları',
+          'Excel’den tek tıkla toplu cari aktarımı'
+        ]
+      },
+      'stok': {
+        badge: 'F3 • STOK YÖNETİMİ',
+        badgeBg: '#2c8ec9',
+        title: 'Stok Kartı — Yedek Parça ve Ürün Yönetimi',
+        desc: 'Sınırsız stok kartı, barkod desteği, özel kod / tedarikçi no / değişen parça no takibi, depo ve raf bilgisi, kritik stok uyarıları ve sayım farkı düzeltme işlemleri.',
+        bullets: [
+          'Özel kod, tedarikçi no & değişen parça no',
+          'Depo ve raf yeri bazlı stok takibi',
+          'Kritik minimum stok seviye uyarıları',
+          'Excel’den toplu stok kartı aktarımı'
+        ]
+      },
+      'satis-fatura': {
+        badge: 'F4 • SATIŞ FATURASI',
+        badgeBg: '#7e3f98',
+        title: 'Satış Faturası — Hızlı ve Güvenli Faturalandırma',
+        desc: 'Hızlı fatura girişi, otomatik KDV hesabı, indirimli satırlar, iptal/iade akışı, belge onay kilidi ve satış irsaliyesinden tek tuşla fatura oluşturma.',
+        bullets: [
+          'İrsaliyeden tek tuşla fatura dönüşümü',
+          'Otomatik KDV ve satır iskonto hesabı',
+          'Onay kilidi ile hatalı müdahale koruması',
+          'İptal ve iade süreç yönetimi'
+        ]
+      },
+      'alis-fatura': {
+        badge: 'F5 • ALIŞ FATURASI',
+        badgeBg: '#c8432e',
+        title: 'Alış Faturası — Satın Alma ve Maliyet Girişi',
+        desc: 'Tedarikçilerden gelen alımların hızlı kaydı, otomatik maliyet güncellemesi ve FIFO/LIFO/Ağırlıklı Ortalama maliyet katmanlarının beslenmesi.',
+        bullets: [
+          'Alış irsaliyesinden tek tuşla faturalaşma',
+          'Stok maliyet katmanlarına otomatik işleyiş',
+          'Tedarikçi cari bakiyesine anında yansıma',
+          'Yıl kilidi ve denetim kaydı koruması'
+        ]
+      },
+      'satis-irsaliye': {
+        badge: 'F6 • SATIŞ İRSALİYESİ',
+        badgeBg: '#16876d',
+        title: 'Satış İrsaliyesi — Mal Teslimat ve Eksik Analizi',
+        desc: 'Müşteri sevkiyatlarını hızla kaydedin. İrsaliyedeki eksik kalemler otomatik olarak Tedarik Takip (F23) havuzuna aktarılır.',
+        bullets: [
+          'Tedarik Takip modülüne otomatik eksik aktarımı',
+          'Tek tıkla ilgili sipariş fişine ulaşım',
+          'Yıl kilidi koruması ve iptal akışı',
+          'Tek tuşla satış faturasına dönüştürme'
+        ]
+      },
+      'alis-irsaliye': {
+        badge: 'F7 • ALIŞ İRSALİYESİ',
+        badgeBg: '#dc8a0c',
+        title: 'Alış İrsaliyesi — Mal Kabul ve Depo Girişi',
+        desc: 'Tedarikçiden gelen ürünlerin mal kabulünü yapın, sipariş fişindeki gelen ve kalan miktarları otomatik güncelleyin.',
+        bullets: [
+          'Sipariş fişinden doğrudan mal kabul',
+          'Gelen miktar ve kalan bakiye kontrolü',
+          'Depo ve raf stoklarına anında giriş',
+          'Alış faturasına tek tuşla dönüşüm'
+        ]
+      },
+      'raporlama': {
+        badge: 'F8 • 20+ RAPOR',
+        badgeBg: '#28479c',
+        title: 'Gelişmiş Raporlama & FIFO / LIFO Maliyet Analizi',
+        desc: 'Cari mizan, mutabakat, stok hareketleri, envanter, ABC analizi ve maliyet-kârlılık raporları. Geçmiş stok hareketlerinden gerçek FIFO, LIFO ve Ağırlıklı Ortalama hesaplanır.',
+        bullets: [
+          'Gerçek FIFO, LIFO ve Ağırlıklı Ortalama (ABG)',
+          'Eksik fiyatlı hareketler için özel uyarı',
+          'ABC analizi ve otomatik sipariş önerisi',
+          'Cari mizan, mutabakat ve aylık alış-satış'
+        ]
+      },
+      'hizli-satis': {
+        badge: 'F9 • HIZLI SATIŞ',
+        badgeBg: '#c81e56',
+        title: 'Hızlı Satış Terminali — Perakende Ekranı',
+        desc: 'Perakende ve tezgâh üstü satışlarda tek ekran üzerinden barkod okutarak hızlı fiş kesme ve kasa entegrasyonu.',
+        bullets: [
+          'Tek ekranda barkodlu hızlı fiş kesimi',
+          'Nakit ve kart tahsilatıyla kasa entegrasyonu',
+          'Anlık stok düşümü ve fiyat gösterimi',
+          'Dokunmatik ve klavye dostu arayüz'
+        ]
+      },
+      'kasa-banka': {
+        badge: 'F10 • KASA & BANKA',
+        badgeBg: '#0d6f62',
+        title: 'Kasa & Banka — Nakit Akışı Yönetimi',
+        desc: 'Nakit ve banka tahsilatları, tedarikçi ödemeleri, kasalar arası transfer, günlük kasa raporu ve kasa bazlı anlık bakiyeler.',
+        bullets: [
+          'Nakit ve banka tahsilat/ödeme takibi',
+          'Kasalar ve bankalar arası virman/transfer',
+          'Günlük kasa hareket raporu',
+          'Kasa bazlı anlık bakiye kontrolü'
+        ]
+      },
+      'cek-senet': {
+        badge: 'F11 • ÇEK-SENET',
+        badgeBg: '#689b38',
+        title: 'Çek / Senet Portföyü — Güvenli Vade Takibi',
+        desc: 'Portföyde ve tahsilde çek/senet takibi, vade izleme, tahsilatta otomatik kasa işleyişi ve çift tahsil koruması.',
+        bullets: [
+          'Portföyde ve tahsilde durum izleme',
+          'Yaklaşan vade uyarı ve takvim entegrasyonu',
+          'Tahsilatta otomatik kasa/banka kaydı',
+          'Çift tahsilat önleme güvenlik kilidi'
+        ]
+      },
+      'ambar': {
+        badge: 'F12 • AMBAR YÖNETİMİ',
+        badgeBg: '#e56a08',
+        title: 'Ambar / Depo İşlemleri — Raf Bazlı Kontrol',
+        desc: 'Depolar arası transfer, depo bazlı sayım, yetersiz stok kontrolü ve raf bazlı adres takibi.',
+        bullets: [
+          'Depolar arası hızlı stok transfer fişleri',
+          'Depo bazlı periyodik sayım işlemleri',
+          'Yetersiz stok uyarı mekanizması',
+          'Yedek parça raf adresi yönetimi'
+        ]
+      },
+      'ebelge': {
+        badge: 'F13 • E-BELGE TAKİP',
+        badgeBg: '#4f626e',
+        title: 'e-Belge Altyapısı — e-Fatura & e-İrsaliye',
+        desc: 'e-Fatura / e-İrsaliye gönderim kuyruğu, GİB durum sorgulama ve entegratör ayar yönetimi.',
+        bullets: [
+          'e-Fatura ve e-İrsaliye gönderim kuyruğu',
+          'Anlık GİB durum sorgulama',
+          'Gelen/giden e-Belge arşivleme',
+          'Merkezi GİB parametre yönetimi'
+        ]
+      },
+      'devir': {
+        badge: 'F14 • DEVİR İŞLEMLERİ',
+        badgeBg: '#116596',
+        title: 'Yıl Sonu Devir İşlemleri',
+        desc: 'Yeni mali yıla geçerken stok bakiyelerini, cari hesap devirlerini ve kasa/portföy durumlarını güvenle yeni döneme aktarın.',
+        bullets: [
+          'Stok ve cari bakiye devir sihirbazı',
+          'Geçmiş yıl verileri için yıl kilidi koruması',
+          'Hatasız dönem açılışı',
+          'Denetim kaydı ile güvenli işlem'
+        ]
+      },
+      'sistem': {
+        badge: 'F15 • SİSTEM AYARLARI',
+        badgeBg: '#11735f',
+        title: 'Sistem Ayarları & Merkez API Yapılandırması',
+        desc: 'Merkez sunucu bağlantısı, yazıcı/barkod şablonları, yedekleme ve genel ticari kuralların yönetimi.',
+        bullets: [
+          'Merkez sunucu ve API port ayarları',
+          'Otomatik veritabanı yedekleme',
+          'Barkod ve fiş/fatura tasarım ayarları',
+          'KDV oranları ve şirket parametreleri'
+        ]
+      },
+      'kullanici': {
+        badge: 'F16 • KULLANICI ROLLERİ',
+        badgeBg: '#354454',
+        title: 'Kullanıcı Rolleri & Denetim Kaydı',
+        desc: 'Satış, depo, muhasebe, satın alma ve yönetici rolleri ayrı ayrı tanımlanır; tüm işlemler denetim kaydıyla izlenir.',
+        bullets: [
+          'Satış, depo, muhasebe, satın alma rolleri',
+          'Ekran ve işlem bazlı yetki kısıtlama',
+          'Kim ne zaman ne yaptı: Denetim Kaydı',
+          'Çoklu masaüstü ve mobil kullanıcı yönetimi'
+        ]
+      },
+      'mobil': {
+        badge: 'F17–F19 • MOBİL & EL TERMİNALİ',
+        badgeBg: '#2b8447',
+        title: 'Mobil, El Terminali ve Barkod Okuma',
+        desc: 'Android telefon kamerası veya USB barkod okuyucu ile sahadan stok sorgulama, raf yeri görme, siparişten satış irsaliyesi ve fatura oluşturma.',
+        bullets: [
+          'Android kamera ile anında barkod okuma',
+          'USB barkod okuyucularla tak-çalıştır uyum',
+          'Raf yeri, stok durumu ve müşteri siparişi görme',
+          'Excel siparişlerini mobil ekibe iletme'
+        ]
+      },
+      'akilli-arama': {
+        badge: 'CTRL+K • AKILLI ARAMA',
+        badgeBg: '#6b21a8',
+        title: 'Akıllı Arama — Tüm Sistemde Saniyeler İçinde Erişim',
+        desc: 'Stok kodu, değişen parça numarası, barkod, cari adı veya menü kısayolunu yazarak klavyeden elinizi kaldırmadan istediğiniz karta ulaşın.',
+        bullets: [
+          'Parça no, özel kod ve barkod ile hızlı bulma',
+          'Cari kart ve evrak numarasına doğrudan geçiş',
+          'Tüm modüllere klavye odaklı erişim',
+          'Yedek parça tezgâh hızına uygun arama'
+        ]
+      }
+    };
+
+    function selectErpModule(key) {
+      const data = erpModuleData[key];
+      if (!data) return;
+
+      const badgeEl = document.getElementById('previewBadge');
+      const titleEl = document.getElementById('previewTitle');
+      const descEl = document.getElementById('previewDesc');
+      const bulletsEl = document.getElementById('previewBullets');
+
+      badgeEl.textContent = data.badge;
+      badgeEl.style.backgroundColor = data.badgeBg;
+      titleEl.textContent = data.title;
+      descEl.textContent = data.desc;
+
+      bulletsEl.innerHTML = data.bullets.map(item => `
+        <div class="flex items-center gap-2 bg-slate-50 px-3 py-2 rounded-lg">
+          <span class="text-emerald-600 font-bold">✓</span> ${item}
+        </div>
+      `).join('');
+
+      // Aktif kart vurgusunu güncelle
+      document.querySelectorAll('.erp-tile').forEach(btn => {
+        btn.classList.remove('ring-4', 'ring-amber-400');
+      });
+      const activeTile = document.getElementById('tile-' + key);
+      if (activeTile) {
+        activeTile.classList.add('ring-4', 'ring-amber-400');
+      }
+    }
+
+    // Modül Kataloğu Kategori Filtreleme
+    function filterModules(category) {
+      const cards = document.querySelectorAll('.module-card');
+      const buttons = document.querySelectorAll('.mod-filter-btn');
+
+      buttons.forEach(btn => {
+        if (btn.dataset.filter === category) {
+          btn.classList.remove('bg-slate-100', 'text-slate-700');
+          btn.classList.add('bg-safire-700', 'text-white');
+        } else {
+          btn.classList.remove('bg-safire-700', 'text-white');
+          btn.classList.add('bg-slate-100', 'text-slate-700');
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Mobil Menü Aç/Kapat
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Web Paneli Modal İşlemleri
+    function openWebPanelModal() {
+      const modal = document.getElementById('webPanelModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeWebPanelModal() {
+      const modal = document.getElementById('webPanelModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function connectWebPanel() {
+      const input = document.getElementById('serverAddressInput').value.trim();
+      const statusMsg = document.getElementById('webPanelStatusMsg');
+      statusMsg.classList.remove('hidden');
+
+      if (!input) {
+        statusMsg.textContent = 'Lütfen işletmenizdeki ana bilgisayarda çalışan Safire ERP Web Paneli adresini (ör. http://192.168.1.100:8080) girin. Henüz kurulum yapılmadıysa aşağıdaki linkten bedelsiz kurulum isteyebilirsiniz.';
+        return;
+      }
+
+      const targetUrl = input.startsWith('http://') || input.startsWith('https://') ? input : 'http://' + input;
+      statusMsg.textContent = `Bağlantı adresi hazırlandı: ${targetUrl} — Yerel ağınızdaki veya sunucunuzdaki Safire ERP Web Paneli yeni sekmede açılıyor...`;
+      window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    }
+
+    // Ücretsiz Kurulum Formu İşlemleri
+    let lastRequestSummary = '';
+
+    function handleInstallSubmit(event) {
+      event.preventDefault();
+      const company = document.getElementById('companyName').value.trim();
+      const contact = document.getElementById('contactName').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+      const city = document.getElementById('cityDistrict').value.trim();
+      const reqType = document.getElementById('requestType').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      lastRequestSummary = `Safire ERP Kurulum Talebi | Firma: ${company} | Yetkili: ${contact} | Tel: ${phone} | Konum: ${city} | Talep: ${reqType}${notes ? ' | Not: ' + notes : ''}`;
+
+      const successBox = document.getElementById('formSuccessBox');
+      const summaryText = document.getElementById('formSummaryText');
+      summaryText.textContent = `Sayın ${contact} (${company}), "${reqType}" talebiniz oluşturulmuştur. Ekibimiz ${phone} numarası üzerinden sizinle iletişime geçerek ${city} için kurulum ve eğitim planını netleştirecektir.`;
+      successBox.classList.remove('hidden');
+    }
+
+    function copyRequestSummary() {
+      if (!lastRequestSummary) return;
+      const tempInput = document.createElement('textarea');
+      tempInput.value = lastRequestSummary;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+
+      const feedback = document.getElementById('copyFeedback');
+      feedback.classList.remove('hidden');
+      setTimeout(() => feedback.classList.add('hidden'), 3000);
+    }
+  </script>
 </body>
 </html>
