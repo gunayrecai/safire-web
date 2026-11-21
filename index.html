@@ -29,85 +29,90 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Safire ERP",
-    "alternateName": "Safire ERP Stok Takip Sistemi",
-    "applicationCategory": "BusinessApplication",
-    "operatingSystem": "Windows, Web Tarayıcı, Android Mobil & El Terminali",
-    "softwareVersion": "1.0.351",
-    "description": "Yedek parça ve genel ticaret işletmeleri için geliştirilmiş; barkod destekli stok takip, cari, fatura, irsaliye, kasa, mobil barkod ve Tedarik Takip modüllerini tek çatı altında toplayan merkezi ticari yazılım.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "TRY",
-      "description": "İşletmelere özel bedelsiz kurulum, veri aktarımı ve yerinde/uzaktan eğitim desteği."
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Safire Bilgisayar"
-    },
-    "featureList": [
-      "Sınırsız Stok Kartı ve Barkod Yönetimi",
-      "Özel Kod, Tedarikçi No ve Değişen Parça No Takibi",
-      "Tedarik Takip ve Eksik Kalem Analizi",
-      "Alış & Satış Fatura ve İrsaliye Yönetimi",
-      "Android Kamera & USB Barkod Okuyucu Desteği",
-      "FIFO, LIFO ve Ağırlıklı Ortalama Maliyet Raporları",
-      "e-Fatura ve e-İrsaliye Altyapısı",
-      "Çok Kullanıcılı Merkezi API ve Rol Bazlı Yetkilendirme"
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Safire ERP",
+        "alternateName": "Safire ERP Stok Takip Sistemi",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, Web Tarayıcı, Android Mobil & El Terminali",
+        "softwareVersion": "1.0.351",
+        "description": "Yedek parça ve genel ticaret işletmeleri için geliştirilmiş; barkod destekli stok takip, cari, fatura, irsaliye, kasa, mobil barkod ve Tedarik Takip modüllerini tek çatı altında toplayan merkezi ticari yazılım.",
+        "url": "https://gunayrecai.github.io/safire-web/",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "TRY",
+          "description": "İşletmelere özel bedelsiz kurulum, veri aktarımı ve yerinde/uzaktan eğitim desteği."
+        },
+        "publisher": { "@type": "Organization", "name": "Safire Bilgisayar" },
+        "featureList": [
+          "Sınırsız Stok Kartı ve Barkod Yönetimi",
+          "Özel Kod, Tedarikçi No ve Değişen Parça No Takibi",
+          "Tedarik Takip ve Eksik Kalem Analizi",
+          "Alış & Satış Fatura ve İrsaliye Yönetimi",
+          "Android Kamera & USB Barkod Okuyucu Desteği",
+          "FIFO, LIFO ve Ağırlıklı Ortalama Maliyet Raporları",
+          "e-Fatura ve e-İrsaliye Altyapısı",
+          "Çok Kullanıcılı Merkezi API ve Rol Bazlı Yetkilendirme"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "Safire Bilgisayar",
+        "url": "https://gunayrecai.github.io/safire-web/",
+        "sameAs": [ "https://github.com/gunayrecai/safire-web" ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "email": "info@safire.com.tr",
+          "availableLanguage": ["Turkish"]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Safire ERP",
+        "url": "https://gunayrecai.github.io/safire-web/",
+        "inLanguage": "tr-TR"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Safire ERP nedir?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Safire ERP; yedek parça ve genel ticaret işletmeleri için geliştirilmiş, barkod destekli stok takip, cari hesap, fatura, irsaliye, kasa ve Tedarik Takip modüllerini tek çatı altında toplayan merkezi bir ticari yazılımdır." }
+          },
+          {
+            "@type": "Question",
+            "name": "Safire ERP kaç kullanıcı aynı anda kullanabilir?",
+            "acceptedAnswer": { "@type": "Answer", "text": "1 ana bilgisayara kurulan merkez yapı sayesinde 4-5 masaüstü/laptop kullanıcısı ve 4-5 mobil kullanıcı aynı veriye eşzamanlı erişebilir. Masaüstü, tarayıcı ve mobil ekranlar aynı merkez veriyi kullanır." }
+          },
+          {
+            "@type": "Question",
+            "name": "Kurulum ve eğitim ücretli mi?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Talep eden işletmelere kurulum, stok-cari veri aktarımı, personel eğitimi ve ilk fatura/irsaliye kullanımı bedelsiz olarak sağlanır. 'Gel, yap' derseniz yerinde de destek verilir." }
+          },
+          {
+            "@type": "Question",
+            "name": "Tedarik Takip modülü ne işe yarar?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Satış irsaliyelerinden gelen eksik kalemler otomatik analiz edilir, tedarik havuzuna alınır, tedarikçiye atanır ve sipariş fişine dönüştürülür. Mal kabulden faturaya kadar uçtan uca takip sağlanır; tarayıcıdan da gerçek sunucu verisiyle çalışır." }
+          },
+          {
+            "@type": "Question",
+            "name": "Barkod okuyucu ve mobil cihazlar destekleniyor mu?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Evet. Android telefon kamerasıyla barkod okutulabilir, USB barkod okuyucular tak-çalıştır şeklinde kullanılır. Mobil ve el terminallerinden stok sorgulama, sipariş, irsaliye ve fatura işlemleri yapılabilir." }
+          },
+          {
+            "@type": "Question",
+            "name": "FIFO, LIFO ve maliyet raporları var mı?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Evet. Envanter ve maliyet raporlarında gerçek FIFO, LIFO ve Ağırlıklı Ortalama / ABG yöntemleri kullanılır; geçmiş stok hareketlerinden maliyet katmanları hesaplanır." }
+          }
+        ]
+      }
     ]
   }
-  </script>
-
-  <!-- Google Fonts: Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-          },
-          colors: {
-            safire: {
-              50: '#faf5ff',
-              100: '#f3e8ff',
-              200: '#e9d5ff',
-              500: '#a855f7',
-              600: '#9333ea',
-              700: '#7e22ce',
-              800: '#6b21a8',
-              900: '#581c87',
-              950: '#3b0764',
-            }
-          }
-        }
-      }
-    }
-  </script>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-safire-700 selection:text-white">
-
-  <!-- ÜST MENÜ (STICKY NAVBAR) -->
-  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
-        <!-- Marka Logosu -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gradient-to-br from-safire-700 to-safire-900 flex items-center justify-center text-white shadow-md shadow-safire-800/25 group-hover:scale-105 transition-transform">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900">SAFİRE <span class="text-safire-700">ERP</span></span>
-              <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-safire-100 text-safire-800">v1.0</span>
+</script> items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-safire-100 text-safire-800">v1.0</span>
             </div>
             <p class="text-[11px] sm:text-xs text-slate-500 font-medium leading-none mt-0.5">Stok Takip & Ticari Yönetim Sistemi</p>
           </div>
@@ -121,6 +126,8 @@
             <span class="px-1.5 py-0.5 text-[10px] font-bold uppercase bg-amber-100 text-amber-800 rounded-md">Yeni F23</span>
           </a>
           <a href="#moduller" class="hover:text-safire-700 transition-colors">Tüm Modüller</a>
+          <a href="yedek-parca-stok-takip.html" class="hidden xl:inline hover:text-safire-700 transition-colors">Yedek Parça Stok</a>
+          <a href="tedarik-takip.html" class="hidden xl:inline hover:text-safire-700 transition-colors">Tedarik Takip</a>
           <a href="#mimari" class="hover:text-safire-700 transition-colors">Çalışma Yapısı</a>
           <a href="#kurulum-talep" class="hover:text-safire-700 transition-colors">Kurulum & Eğitim</a>
         </nav>
@@ -999,8 +1006,8 @@
         <div>
           <h4 class="text-xs font-bold uppercase tracking-wider text-white mb-3">Çözümler & Modüller</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="#tedarik-takip" class="hover:text-white transition">Tedarik Takip (F23)</a></li>
-            <li><a href="#moduller" class="hover:text-white transition">Stok & Yedek Parça Yönetimi</a></li>
+            <li><a href="tedarik-takip.html" class="hover:text-white transition">Tedarik Takip (F23)</a></li>
+            <li><a href="yedek-parca-stok-takip.html" class="hover:text-white transition">Stok & Yedek Parça Yönetimi</a></li>
             <li><a href="#moduller" class="hover:text-white transition">Mobil & El Terminali Barkod</a></li>
             <li><a href="#moduller" class="hover:text-white transition">FIFO / LIFO Maliyet Raporları</a></li>
           </ul>

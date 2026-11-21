@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tedarik Takip Programı | Sipariş Fişi ve Eksik Kalem Yönetimi — Safire ERP</title>
+<meta name="description" content="Satış irsaliyelerinden gelen eksik kalemleri analiz eden, tedarik havuzuna alan, tedarikçiye atayıp sipariş fişine dönüştüren Tedarik Takip programı. Tarayıcıdan gerçek sunucu verisiyle çalışır.">
+<meta name="keywords" content="tedarik takip programı, sipariş fişi, eksik kalem analizi, tedarik havuzu, mal kabul, satış irsaliyesi sipariş, satın alma takip">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://gunayrecai.github.io/safire-web/tedarik-takip.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tedarik Takip Programı | Safire ERP">
+<meta property="og:description" content="Eksik kalem analizi, tedarik havuzu, sipariş fişi ve mal kabul. Masaüstü ve tarayıcıda birebir aynı veri.">
+<meta property="og:url" content="https://gunayrecai.github.io/safire-web/tedarik-takip.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Tedarik Takip modülü ne işe yarar?","acceptedAnswer":{"@type":"Answer","text":"Satış irsaliyelerinden gelen eksik kalemleri otomatik analiz eder, tedarik havuzuna alır, tedarikçiye atar ve sipariş fişine dönüştürür. Mal kabulden alış faturasına kadar uçtan uca takip sağlar."}},
+{"@type":"Question","name":"Sipariş fişinden irsaliyeye geçiş yapılabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Sipariş fişinden tek tıkla alış irsaliyesi ve faturaya geçilir; 'İrsaliyelere Git / Sipariş Listesine Dön' butonlarıyla ekranlar arası pratik geçiş yapılır."}},
+{"@type":"Question","name":"Tarayıcıdan kullanılabilir mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Tarayıcıdaki Tedarik Takip paneli merkez API'den gelen veriyi eksiksiz okur; satış irsaliyesi listesi, sipariş fişleri ve sipariş kalemleri masaüstündeki veriyle birebir eşleşir."}}
+]}
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;color:#1d2840;background:#fff;line-height:1.65}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+header{background:linear-gradient(135deg,#24165f,#5b32a1);color:#fff;padding:16px 0}
+header .wrap{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:20px;font-weight:800}.logo a{color:#fff;text-decoration:none}
+header a.btn{background:#fff;color:#5b32a1;padding:9px 18px;border-radius:9px;font-weight:700;text-decoration:none;font-size:14px}
+.kahraman{background:linear-gradient(120deg,#faf5ff,#fff);padding:54px 0;border-bottom:1px solid #e9d5ff}
+.kahraman h1{font-size:34px;color:#5b32a1;margin-bottom:12px;line-height:1.2}
+.kahraman p{font-size:17px;color:#475569;max-width:720px}
+.bolum{padding:46px 0}.bolum h2{font-size:26px;color:#24165f;margin-bottom:18px}
+.adimlar{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.adim{background:#faf7ff;border:1px solid #e9d5ff;border-radius:12px;padding:18px}
+.adim .no{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#5b32a1;color:#fff;font-weight:800;margin-bottom:8px}
+.adim b{color:#6b21a8}
+.cta{background:linear-gradient(135deg,#5b32a1,#8e44ad);color:#fff;text-align:center;border-radius:18px;padding:38px 24px;margin:20px 0}
+.cta h2{font-size:26px;margin-bottom:10px}.cta a{display:inline-block;margin-top:16px;background:#fff;color:#5b32a1;padding:12px 24px;border-radius:10px;font-weight:800;text-decoration:none}
+footer{background:#24165f;color:#cfc6e8;text-align:center;padding:22px;font-size:13px}
+footer a{color:#fff}
+@media(max-width:700px){.adimlar{grid-template-columns:1fr}.kahraman h1{font-size:26px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo"><a href="index.html">🛒 SAFİRE ERP</a></div><a class="btn" href="index.html#kurulum-talep">Ücretsiz Kurulum</a></div></header>
+<section class="kahraman"><div class="wrap">
+<h1>Tedarik Takip Programı ve Sipariş Fişi Yönetimi</h1>
+<p>Satış irsaliyelerinden gelen eksik kalemler artık kaybolmuyor: otomatik analiz, tedarik havuzu, tedarikçi atama, sipariş fişi, mal kabul ve faturaya geçiş tek akışta. Masaüstü ve tarayıcıdan aynı canlı veri.</p>
+</div></section>
+<section class="bolum"><div class="wrap">
+<h2>4 Adımda Tedarik Süreci</h2>
+<div class="adimlar">
+<div class="adim"><div class="no">1</div><b>Eksik Kalem Analizi</b><p>Satış irsaliyelerindeki eksik ürünler otomatik tespit edilir.</p></div>
+<div class="adim"><div class="no">2</div><b>Tedarik Havuzu & Atama</b><p>Ürünler tedarikçiye atanır, kısmi teslim ve bekleyen miktar izlenir.</p></div>
+<div class="adim"><div class="no">3</div><b>Sipariş Fişi & Mal Kabul</b><p>Gelen ve kalan miktarlar anlık güncellenir.</p></div>
+<div class="adim"><div class="no">4</div><b>İrsaliye & Fatura</b><p>Sipariş fişinden tek tıkla alış irsaliyesi ve faturaya geçilir.</p></div>
+</div>
+</div></section>
+<section class="bolum"><div class="wrap">
+<div class="cta"><h2>Tedarik Sürecinizi Bedelsiz Deneyin</h2><p>Tarayıcıdan gerçek sunucu verisiyle çalışan canlı demo.</p><a href="index.html#kurulum-talep">Kurulum Talebi Oluştur →</a></div>
+</div></section>
+<footer>© 2026 Safire Bilgisayar · <a href="index.html">Ana Sayfa</a> · Tedarik Takip Programı</footer>
+</body>
+</html>
